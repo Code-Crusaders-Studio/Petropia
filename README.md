@@ -1,6 +1,6 @@
 Commits devem ser organizados da seguinte forma:
 
--título (versão do projeto, começando com v0.1)
+-título (versão do projeto, a partir do 0.0)
 -descrição (lista resumida de alterações)
 
 Exemplos:
@@ -11,7 +11,6 @@ v0.1
 +sistema de combate
 
 v0.1.1
-
 +ajuste na movimentação do personagem
 +correção de hitbox do ataque pesado
 
