@@ -1,55 +1,108 @@
+using System.Collections;
 using UnityEngine;
 
 public class Buildings : MonoBehaviour
 {
-    public string id, placementSite;
-    public int cost, polution, degradation, level;
-    public float operationTime;
-    public enum States { Idle, Operating, Broken };
-    public States currentState;
-    public bool isOperating, isBroken;
-
-    protected GameObject globalController;
     protected ResourceManager resources;
 
-    public void FindManager()
+    [Header("General Settings")]
+    public string id;
+    public BuildingTypes buildingType;
+    public enum BuildingTypes
     {
-        globalController = GameObject.FindWithTag("GameController");
-        resources = globalController.GetComponent<ResourceManager>();
+        LandConv,
+        LandSust,
+        OffshoreConv,
+        OffshoreSust,
+        TankSmall,
+        TankMed,
+        TankBig,
+        RefConv,
+        RefSust,
+        ResiProc,
+        Docks,
+        Research,
+        Capacitation
+    }
+    
+    public string terrain;
+    public int buildCost;
+    public int pollution;
+    public int upgradeCost;
+    public bool upgraded;
 
-        Debug.Log(resources + "found");
+    public States currentState = States.Idle;
+    public enum States
+    {
+        Idle,
+        Operating,
+        Broken
     }
 
-    public void Build(int cost, int polution, string placementSite)
+    public virtual void Start()
     {
-        resources.cashAmount -= cost;
-        resources.polutionAmount += polution;
+        resources = GameObject.FindWithTag("GameController").GetComponent<ResourceManager>();
 
-        Debug.Log("cashAmount = " + resources.cashAmount + "\npolutionAmount = " + resources.polutionAmount + "\nextractor placed");
+        Build();
     }
 
-    public void Operate()
+    // Métodos comuns de todas as estruturas
+    public virtual void Build()
     {
-        if (currentState == States.Idle)
-            currentState = States.Operating;
-    }
-
-    public void Break()
-    {
-        currentState = States.Broken;
-    }
-
-    public void Repair(int cost)
-    {
-        if(currentState == States.Broken)
+        if (resources.Cash >= buildCost)
         {
-            cost -= resources.cashAmount;
+            resources.Cash -= buildCost;
+            resources.Pollution += pollution;
+            UpdateID();
+
+            Debug.Log(id + " built");
         }
     }
 
-    public void Upgrade(int cost)
+    public virtual void Remove()
     {
-        cost -= resources.cashAmount;
-        level = 2;
+        Destroy(gameObject);
+
+        Debug.Log(id + " removed");
+    }
+
+    public virtual void UpdateID()
+    {
+        id = $"{buildingType}{(upgraded ? "1" : "0")}{currentState}";
+
+        Debug.Log(id);
+    }
+
+    // Métodos opcionais para estruturas específicas
+    public virtual void Operate()
+    {
+        currentState = States.Operating;
+        UpdateID();
+
+        Debug.Log(id + " is operating");
+    }
+
+    public virtual void Break()
+    {
+        currentState = States.Broken;
+        UpdateID();
+
+        Debug.Log(id + " broke");
+    }
+
+    public virtual void Repair()
+    {
+        currentState = States.Idle;
+        UpdateID();
+
+        Debug.Log(id + " was repaired");
+    }
+
+    public virtual void Upgrade()
+    {
+        upgraded = true;
+        UpdateID();
+
+        Debug.Log(id + " was upgraded");
     }
 }
