@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Storage : Buildings
+public class Storage : Building
 {
     [Header("Storage Settings")]
     public int additionalStorage;
@@ -9,11 +9,30 @@ public class Storage : Buildings
     {
         base.Start();
 
+        IncreaseCapacity();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Delete))
+            Remove();
+    }
+
+    void IncreaseCapacity()
+    {
         resources.OilLimit += additionalStorage;
+    }
+
+    void DecreaseCapacity()
+    {
+        resources.OilLimit -= additionalStorage;
+
+        if (resources.Oil > resources.OilLimit)
+            resources.Oil = resources.OilLimit;
     }
 
     void OnDestroy()
     {
-       resources.OilLimit -= additionalStorage; 
+        DecreaseCapacity();
     }
 }

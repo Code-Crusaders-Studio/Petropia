@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class Extractor : Building
+public class Refinery : Building
 {
-    [Header("Extractor Settings")]
-    public float extractionTime;
-    public int oilOutput;
+    [Header("Refinery Settings")]
+    public float refiningTime;
+    public int resourceInput;
+    public int gallonOutput;
     public int condition = 100;
     public int Condition
     {
@@ -17,35 +18,54 @@ public class Extractor : Building
     public int repairCost;
     public int fullRepairCost;
     public int additionalPollution;
+    
+    public enum RefineryType { OilBased, PollutionBased }
+    public RefineryType refineryType;
 
     Coroutine operation;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
             Operate();
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.A))
             Repair();
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Z))
             Upgrade();
 
         if (Input.GetKeyDown(KeyCode.Delete))
             Remove();
 
-        if (currentState == States.Idle && upgraded)
+        if (currentState == States.Idle && upgraded && HasEnoughResources())
             Operate();
     }
 
-    IEnumerator Extraction()
+    bool HasEnoughResources()
     {
-        yield return new WaitForSeconds(extractionTime);
+        return refineryType == RefineryType.OilBased 
+            ? resources.Oil >= resourceInput 
+            : resources.Pollution >= resourceInput;
+    }
+
+    IEnumerator Refining()
+    {
+        yield return new WaitForSeconds(refiningTime);
 
         if (currentState == States.Broken)
             yield break;
 
-        resources.Oil += oilOutput;
+        if (refineryType == RefineryType.OilBased)
+        {
+            resources.Oil -= resourceInput;
+        }
+        else
+        {
+            resources.Pollution -= resourceInput;
+        }
+        
+        resources.Gallons += gallonOutput;
         Condition -= degradationRate;
 
         if (Condition <= 0)
@@ -54,18 +74,18 @@ public class Extractor : Building
         {
             currentState = States.Idle;
 
-            if (upgraded)
+            if (upgraded && HasEnoughResources())
                 Operate();
         }
     }
 
     public override void Operate()
     {
-        if (currentState != States.Idle || Condition <= 0)
+        if (currentState != States.Idle || Condition <= 0 || !HasEnoughResources())
             return;
 
         base.Operate();
-        operation = StartCoroutine(Extraction());
+        operation = StartCoroutine(Refining());
     }
 
     public override void Break()
@@ -105,7 +125,7 @@ public class Extractor : Building
             resources.Cash -= upgradeCost;
             base.Upgrade();
 
-            if (currentState == States.Idle)
+            if (currentState == States.Idle && HasEnoughResources())
                 Operate();
         }
     }

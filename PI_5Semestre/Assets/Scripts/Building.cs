@@ -1,7 +1,6 @@
-using System.Collections;
 using UnityEngine;
 
-public class Buildings : MonoBehaviour
+public class Building : MonoBehaviour
 {
     protected ResourceManager resources;
 
