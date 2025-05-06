@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Storage : Building
+public class StorageBehaviour : BuildingBase
 {
     [Header("Storage Settings")]
     public int additionalStorage;

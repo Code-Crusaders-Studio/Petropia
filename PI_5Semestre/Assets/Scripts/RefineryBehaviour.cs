@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Refinery : Building
+public class RefineryBehaviour : BuildingBase
 {
     [Header("Refinery Settings")]
     public float refiningTime;

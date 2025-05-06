@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Building : MonoBehaviour
+public class BuildingBase : MonoBehaviour
 {
     protected ResourceManager resources;
 
     [Header("General Settings")]
     public string id;
-    public BuildingTypes buildingType;
-    public enum BuildingTypes
+    public BuildingLabels label;
+    public enum BuildingLabels
     {
         LandConv,
         LandSust,
@@ -19,7 +19,7 @@ public class Building : MonoBehaviour
         RefConv,
         RefSust,
         ResiProc,
-        Docks,
+        Port,
         Research,
         Capacitation
     }
@@ -67,7 +67,7 @@ public class Building : MonoBehaviour
 
     public virtual void UpdateID()
     {
-        id = $"{buildingType}{(upgraded ? "1" : "0")}{currentState}";
+        id = $"{label}{(upgraded ? "1" : "0")}{currentState}";
 
         Debug.Log(id);
     }

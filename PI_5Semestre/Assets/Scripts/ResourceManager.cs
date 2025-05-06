@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    [Header("Starter Settings")]
+    [Header("Initial Settings")]
     public int cashAmount = 500000;
     public int Cash
     {

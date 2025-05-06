@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class Extractor : Building
+public class ExtractionBehaviour : BuildingBase
 {
-    [Header("Extractor Settings")]
+    [Header("Extraction Settings")]
     public float extractionTime;
     public int oilOutput;
     public int condition = 100;
@@ -38,7 +38,7 @@ public class Extractor : Building
             Operate();
     }
 
-    IEnumerator Extraction()
+    IEnumerator Extracting()
     {
         yield return new WaitForSeconds(extractionTime);
 
@@ -65,7 +65,7 @@ public class Extractor : Building
             return;
 
         base.Operate();
-        operation = StartCoroutine(Extraction());
+        operation = StartCoroutine(Extracting());
     }
 
     public override void Break()
