@@ -129,4 +129,9 @@ public class RefineryBehaviour : BuildingBase
                 Operate();
         }
     }
+
+    void OnDestroy()
+    {
+        resources.Pollution -= pollution + additionalPollution;
+    }
 }

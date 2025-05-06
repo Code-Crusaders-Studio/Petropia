@@ -1498,7 +1498,7 @@ GameObject:
   - component: {fileID: 2069980351}
   - component: {fileID: 2069980352}
   m_Layer: 0
-  m_Name: Transport
+  m_Name: Shipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1534,11 +1534,15 @@ MonoBehaviour:
   id: Port
   label: 10
   terrain: Water
-  buildCost: 0
-  pollution: 0
+  buildCost: 50000
+  pollution: 30
   upgradeCost: 0
   upgraded: 0
   currentState: 0
+  shippingTime: 15
+  shippingCost: 500
+  cashPerGallon: 1000
+  maxGallonsPerShipment: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -45,8 +45,8 @@ public class BuildingBase : MonoBehaviour
         Build();
     }
 
-    // Métodos comuns de todas as estruturas
-    public virtual void Build()
+    // Métodos comuns para todas as estruturas
+    public void Build()
     {
         if (resources.Cash >= buildCost)
         {
@@ -58,14 +58,14 @@ public class BuildingBase : MonoBehaviour
         }
     }
 
-    public virtual void Remove()
+    public void Remove()
     {
         Destroy(gameObject);
 
         Debug.Log(id + " removed");
     }
 
-    public virtual void UpdateID()
+    public void UpdateID()
     {
         id = $"{label}{(upgraded ? "1" : "0")}{currentState}";
 
