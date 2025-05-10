@@ -48,8 +48,9 @@ public class ShipmentBehaviour : BuildingBase
         operation = StartCoroutine(Shipping());
     }
 
-    void OnDestroy()
+    public override void Remove()
     {
         resources.Pollution -= pollution;
+        base.Remove();
     }
 }

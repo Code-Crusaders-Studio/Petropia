@@ -17,7 +17,7 @@ public class ResourceManager : MonoBehaviour
         set { oilAmount = Mathf.Clamp(value, 0, oilLimit); }
     }
 
-    public int oilLimit = 0;
+    [HideInInspector] public int oilLimit = 0;
     public int OilLimit
     {
         get { return oilLimit; }
@@ -30,11 +30,15 @@ public class ResourceManager : MonoBehaviour
         get { return gallonAmount; }
         set { gallonAmount = Mathf.Clamp(value, 0, 999999999); }
     }
-    
+
     public int pollutionAmount = 0;
     public int Pollution
     {
         get { return pollutionAmount; }
         set { pollutionAmount = Mathf.Clamp(value, 0, 1000); }
     }
+
+    [Header("Modifiers")]
+    public int productionModifier = 1; 
+    public int pollutionModifier = 1;
 }
