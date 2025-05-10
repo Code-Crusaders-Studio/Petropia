@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RefineryBehaviour : BaseBuilding
+public class RefineryBehaviour : BuildingBase
 {
     [Header("Refinery Settings")]
     public float refiningTime;
@@ -18,7 +18,7 @@ public class RefineryBehaviour : BaseBuilding
     public int repairCost;
     public int fullRepairCost;
     public int additionalPollution;
-
+    
     public enum RefineryType { OilBased, PollutionBased }
     public RefineryType refineryType;
 
@@ -44,8 +44,8 @@ public class RefineryBehaviour : BaseBuilding
 
     bool HasEnoughResources()
     {
-        return refineryType == RefineryType.OilBased
-            ? resources.Oil >= resourceInput
+        return refineryType == RefineryType.OilBased 
+            ? resources.Oil >= resourceInput 
             : resources.Pollution >= resourceInput;
     }
 
@@ -64,8 +64,8 @@ public class RefineryBehaviour : BaseBuilding
         {
             resources.Pollution -= resourceInput;
         }
-
-        resources.Gallons += gallonOutput * resources.productionModifier;
+        
+        resources.Gallons += gallonOutput;
         Condition -= degradationRate;
 
         if (Condition <= 0)
@@ -130,10 +130,8 @@ public class RefineryBehaviour : BaseBuilding
         }
     }
 
-    public override void Remove()
+    void OnDestroy()
     {
-        Repair();
-        resources.Pollution -= pollution;
-        base.Remove();
+        resources.Pollution -= pollution + additionalPollution;
     }
 }

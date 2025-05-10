@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class StorageBehaviour : BaseBuilding
+public class StorageBehaviour : BuildingBase
 {
     [Header("Storage Settings")]
     public int additionalStorage;
 
-    public override void Build()
+    public override void Start()
     {
-        base.Build();
+        base.Start();
+
         IncreaseCapacity();
     }
 
@@ -30,9 +31,8 @@ public class StorageBehaviour : BaseBuilding
             resources.Oil = resources.OilLimit;
     }
 
-    public override void Remove()
+    void OnDestroy()
     {
         DecreaseCapacity();
-        base.Remove();
     }
 }

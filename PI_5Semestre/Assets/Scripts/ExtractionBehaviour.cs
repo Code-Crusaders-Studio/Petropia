@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ExtractionBehaviour : BaseBuilding
+public class ExtractionBehaviour : BuildingBase
 {
     [Header("Extraction Settings")]
     public float extractionTime;
@@ -45,7 +45,7 @@ public class ExtractionBehaviour : BaseBuilding
         if (currentState == States.Broken)
             yield break;
 
-        resources.Oil += oilOutput * resources.productionModifier;
+        resources.Oil += oilOutput;
         Condition -= degradationRate;
 
         if (Condition <= 0)
@@ -110,10 +110,8 @@ public class ExtractionBehaviour : BaseBuilding
         }
     }
 
-    public override void Remove()
+    void OnDestroy()
     {
-        Repair();
-        resources.Pollution -= pollution;
-        base.Remove();
+        resources.Pollution -= pollution + additionalPollution;
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class ShipmentBehaviour : BaseBuilding
+public class ShipmentBehaviour : BuildingBase
 {
     [Header("Shipment Settings")]
     public float shippingTime;
@@ -48,9 +48,8 @@ public class ShipmentBehaviour : BaseBuilding
         operation = StartCoroutine(Shipping());
     }
 
-    public override void Remove()
+    void OnDestroy()
     {
         resources.Pollution -= pollution;
-        base.Remove();
     }
 }

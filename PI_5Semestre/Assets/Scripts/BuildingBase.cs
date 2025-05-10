@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BaseBuilding : MonoBehaviour
+public class BuildingBase : MonoBehaviour
 {
     protected ResourceManager resources;
 
@@ -23,7 +23,7 @@ public class BaseBuilding : MonoBehaviour
         Research,
         Capacitation
     }
-
+    
     public string terrain;
     public int buildCost;
     public int pollution;
@@ -38,38 +38,38 @@ public class BaseBuilding : MonoBehaviour
         Broken
     }
 
-    void Start()
+    public virtual void Start()
     {
         resources = GameObject.FindWithTag("GameController").GetComponent<ResourceManager>();
 
         Build();
     }
 
-    void UpdateID()
-    {
-        id = $"{label}{(upgraded ? "1" : "0")}{currentState}";
-
-        Debug.Log(id);
-    }
-
     // Métodos comuns para todas as estruturas
-    public virtual void Build()
+    public void Build()
     {
         if (resources.Cash >= buildCost)
         {
             resources.Cash -= buildCost;
-            resources.Pollution += pollution / resources.pollutionModifier;
+            resources.Pollution += pollution;
             UpdateID();
 
             Debug.Log(id + " built");
         }
     }
 
-    public virtual void Remove()
+    public void Remove()
     {
-        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
 
         Debug.Log(id + " removed");
+    }
+
+    public void UpdateID()
+    {
+        id = $"{label}{(upgraded ? "1" : "0")}{currentState}";
+
+        Debug.Log(id);
     }
 
     // Métodos opcionais para estruturas específicas
@@ -103,28 +103,5 @@ public class BaseBuilding : MonoBehaviour
         UpdateID();
 
         Debug.Log(id + " was upgraded");
-    }
-
-    public bool IsOperational()
-    {
-        return label == BuildingLabels.LandConv ||
-       label == BuildingLabels.LandSust ||
-       label == BuildingLabels.OffshoreConv ||
-       label == BuildingLabels.OffshoreSust ||
-       label == BuildingLabels.RefConv ||
-       label == BuildingLabels.RefSust ||
-       label == BuildingLabels.ResiProc ||
-       label == BuildingLabels.Port;
-    }
-
-    public bool IsUpgradable()
-    {
-        return label == BuildingLabels.LandConv || 
-       label == BuildingLabels.LandSust || 
-       label == BuildingLabels.OffshoreConv || 
-       label == BuildingLabels.OffshoreSust || 
-       label == BuildingLabels.RefConv || 
-       label == BuildingLabels.RefSust || 
-       label == BuildingLabels.ResiProc;
     }
 }
