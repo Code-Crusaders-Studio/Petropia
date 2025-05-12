@@ -20,24 +20,6 @@ public class ExtractionBehaviour : BuildingBase
 
     Coroutine operation;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-            Operate();
-
-        if (Input.GetKeyDown(KeyCode.R))
-            Repair();
-
-        if (Input.GetKeyDown(KeyCode.T))
-            Upgrade();
-
-        if (Input.GetKeyDown(KeyCode.Delete))
-            Remove();
-
-        if (currentState == States.Idle && upgraded)
-            Operate();
-    }
-
     IEnumerator Extracting()
     {
         yield return new WaitForSeconds(extractionTime);
@@ -45,6 +27,7 @@ public class ExtractionBehaviour : BuildingBase
         if (currentState == States.Broken)
             yield break;
 
+        resources.Pollution += generatedPollution / resources.pollutionModifier;
         resources.Oil += oilOutput * resources.productionModifier;
         Condition -= degradationRate;
 
@@ -68,36 +51,6 @@ public class ExtractionBehaviour : BuildingBase
         operation = StartCoroutine(Extracting());
     }
 
-    public override void Break()
-    {
-        base.Break();
-
-        if (operation != null)
-            StopCoroutine(operation);
-
-        resources.Pollution += additionalPollution;
-    }
-
-    public override void Repair()
-    {
-        if (currentState == States.Broken)
-        {
-            if (resources.Cash >= fullRepairCost)
-            {
-                Condition = 100;
-                resources.Cash -= fullRepairCost;
-                resources.Pollution -= additionalPollution;
-                base.Repair();
-            }
-        }
-        else if (Condition < 100 && resources.Cash >= repairCost)
-        {
-            Condition = 100;
-            resources.Cash -= repairCost;
-            base.Repair();
-        }
-    }
-
     public override void Upgrade()
     {
         if (resources.Cash >= upgradeCost && !upgraded)
@@ -110,10 +63,35 @@ public class ExtractionBehaviour : BuildingBase
         }
     }
 
-    public override void Remove()
+    public override void Break()
     {
-        Repair();
-        resources.Pollution -= pollution;
-        base.Remove();
+        base.Break();
+
+        if (operation != null)
+            StopCoroutine(operation);
+
+        resources.Pollution += additionalPollution / resources.pollutionModifier;
+    }
+
+    public override void Repair()
+    {
+        if (currentState == States.Broken)
+        {
+            if (resources.Cash >= fullRepairCost)
+            {
+                Condition = 100;
+                resources.Cash -= fullRepairCost;
+                base.Repair();
+
+                if (upgraded)
+                    Operate();
+            }
+        }
+        else if (Condition < 100 && resources.Cash >= repairCost)
+        {
+            Condition = 100;
+            resources.Cash -= repairCost;
+            base.Repair();
+        }
     }
 }

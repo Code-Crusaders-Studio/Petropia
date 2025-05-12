@@ -26,7 +26,7 @@ public class BuildingBase : MonoBehaviour
 
     public string terrain;
     public int buildCost;
-    public int pollution;
+    public int generatedPollution;
     public int upgradeCost;
     public bool upgraded;
 
@@ -58,7 +58,6 @@ public class BuildingBase : MonoBehaviour
         if (resources.Cash >= buildCost)
         {
             resources.Cash -= buildCost;
-            resources.Pollution += pollution / resources.pollutionModifier;
             UpdateID();
 
             Debug.Log(id + " built");
@@ -81,6 +80,14 @@ public class BuildingBase : MonoBehaviour
         Debug.Log(id + " is operating");
     }
 
+    public virtual void Upgrade()
+    {
+        upgraded = true;
+        UpdateID();
+
+        Debug.Log(id + " was upgraded");
+    }
+
     public virtual void Break()
     {
         currentState = States.Broken;
@@ -95,14 +102,6 @@ public class BuildingBase : MonoBehaviour
         UpdateID();
 
         Debug.Log(id + " was repaired");
-    }
-
-    public virtual void Upgrade()
-    {
-        upgraded = true;
-        UpdateID();
-
-        Debug.Log(id + " was upgraded");
     }
 
     public bool IsOperational()

@@ -11,15 +11,6 @@ public class ShipmentBehaviour : BuildingBase
 
     Coroutine operation;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-            Operate();
-
-        if (Input.GetKeyDown(KeyCode.Delete))
-            Remove();
-    }
-
     bool CanShip()
     {
         return resources.Cash >= shippingCost &&
@@ -35,6 +26,7 @@ public class ShipmentBehaviour : BuildingBase
 
         yield return new WaitForSeconds(shippingTime);
 
+        resources.Pollution += generatedPollution / resources.pollutionModifier;
         resources.Cash += gallonsToSell * cashPerGallon;
         currentState = States.Idle;
     }
@@ -46,11 +38,5 @@ public class ShipmentBehaviour : BuildingBase
 
         base.Operate();
         operation = StartCoroutine(Shipping());
-    }
-
-    public override void Remove()
-    {
-        resources.Pollution -= pollution;
-        base.Remove();
     }
 }

@@ -11,12 +11,6 @@ public class StorageBehaviour : BuildingBase
         IncreaseCapacity();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Delete))
-            Remove();
-    }
-
     void IncreaseCapacity()
     {
         resources.OilLimit += additionalStorage;

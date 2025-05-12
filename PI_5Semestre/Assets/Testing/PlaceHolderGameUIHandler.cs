@@ -59,6 +59,7 @@ public class PlaceHolderGameUIHandler : MonoBehaviour
         });
 
         upgradeBtn.interactable = building.IsUpgradable();
+        repairBtn.interactable = building.IsUpgradable();
     }
 
     public void CloseBuildingPanel()

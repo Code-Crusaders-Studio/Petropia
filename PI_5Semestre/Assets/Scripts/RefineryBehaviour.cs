@@ -24,24 +24,6 @@ public class RefineryBehaviour : BuildingBase
 
     Coroutine operation;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-            Operate();
-
-        if (Input.GetKeyDown(KeyCode.A))
-            Repair();
-
-        if (Input.GetKeyDown(KeyCode.Z))
-            Upgrade();
-
-        if (Input.GetKeyDown(KeyCode.Delete))
-            Remove();
-
-        if (currentState == States.Idle && upgraded && HasEnoughResources())
-            Operate();
-    }
-
     bool HasEnoughResources()
     {
         return refineryType == RefineryType.OilBased
@@ -58,6 +40,7 @@ public class RefineryBehaviour : BuildingBase
 
         if (refineryType == RefineryType.OilBased)
         {
+            resources.Pollution += generatedPollution / resources.pollutionModifier;
             resources.Oil -= resourceInput;
         }
         else
@@ -88,36 +71,6 @@ public class RefineryBehaviour : BuildingBase
         operation = StartCoroutine(Refining());
     }
 
-    public override void Break()
-    {
-        base.Break();
-
-        if (operation != null)
-            StopCoroutine(operation);
-
-        resources.Pollution += additionalPollution;
-    }
-
-    public override void Repair()
-    {
-        if (currentState == States.Broken)
-        {
-            if (resources.Cash >= fullRepairCost)
-            {
-                Condition = 100;
-                resources.Cash -= fullRepairCost;
-                resources.Pollution -= additionalPollution;
-                base.Repair();
-            }
-        }
-        else if (Condition < 100 && resources.Cash >= repairCost)
-        {
-            Condition = 100;
-            resources.Cash -= repairCost;
-            base.Repair();
-        }
-    }
-
     public override void Upgrade()
     {
         if (resources.Cash >= upgradeCost && !upgraded)
@@ -130,10 +83,35 @@ public class RefineryBehaviour : BuildingBase
         }
     }
 
-    public override void Remove()
+    public override void Break()
     {
-        Repair();
-        resources.Pollution -= pollution;
-        base.Remove();
+        base.Break();
+
+        if (operation != null)
+            StopCoroutine(operation);
+
+        resources.Pollution += additionalPollution / resources.pollutionModifier;
+    }
+
+    public override void Repair()
+    {
+        if (currentState == States.Broken)
+        {
+            if (resources.Cash >= fullRepairCost)
+            {
+                Condition = 100;
+                resources.Cash -= fullRepairCost;
+                base.Repair();
+
+                if (upgraded && HasEnoughResources())
+                    Operate();
+            }
+        }
+        else if (Condition < 100 && resources.Cash >= repairCost)
+        {
+            Condition = 100;
+            resources.Cash -= repairCost;
+            base.Repair();
+        }
     }
 }
