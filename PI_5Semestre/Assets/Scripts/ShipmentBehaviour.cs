@@ -22,6 +22,7 @@ public class ShipmentBehaviour : BuildingBase
         int gallonsToSell = Mathf.Min(resources.Gallons, maxGallonsPerShipment);
 
         resources.Cash -= shippingCost;
+        resources.totalGallonsSold += gallonsToSell;
         resources.Gallons -= gallonsToSell;
 
         yield return new WaitForSeconds(shippingTime);

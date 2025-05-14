@@ -11,12 +11,6 @@ public class StorageBehaviour : BuildingBase
         IncreaseCapacity();
     }
 
-    public override void Remove()
-    {
-        DecreaseCapacity();
-        base.Remove();
-    }
-
     void IncreaseCapacity()
     {
         resources.OilLimit += additionalStorage;
@@ -28,5 +22,11 @@ public class StorageBehaviour : BuildingBase
 
         if (resources.Oil > resources.OilLimit)
             resources.Oil = resources.OilLimit;
+    }
+
+    public override void Remove()
+    {
+        DecreaseCapacity();
+        base.Remove();
     }
 }

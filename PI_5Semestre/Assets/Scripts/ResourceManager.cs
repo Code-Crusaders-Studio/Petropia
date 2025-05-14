@@ -30,6 +30,7 @@ public class ResourceManager : MonoBehaviour
         get { return gallonAmount; }
         set { gallonAmount = Mathf.Clamp(value, 0, 999999999); }
     }
+    [HideInInspector] public int totalGallonsSold;
 
     public int pollutionAmount = 0;
     public int Pollution
