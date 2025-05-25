@@ -42,6 +42,7 @@ public class GoalManager : MonoBehaviour
                 }
                 else
                 {
+                    GameManager.instance.OnGameFinished();
                     Debug.Log("game ended. well done");
 
                     yield break;
@@ -57,6 +58,7 @@ public class GoalManager : MonoBehaviour
                 {
                     if (strikes >= maxAllowedStrikes)
                     {
+                        GameManager.instance.OnGameOver();
                         Debug.Log("game over");
 
                         yield break;
@@ -66,6 +68,7 @@ public class GoalManager : MonoBehaviour
                 }
                 else
                 {
+                    GameManager.instance.OnGameOver();
                     Debug.Log("game over");
 
                     yield break;
