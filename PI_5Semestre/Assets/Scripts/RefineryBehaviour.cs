@@ -27,8 +27,8 @@ public class RefineryBehaviour : BuildingBase
     bool HasEnoughResources()
     {
         return refineryType == RefineryType.OilBased
-            ? resources.Oil >= resourceInput
-            : resources.Pollution >= resourceInput;
+            ? resources.oilAmount >= resourceInput
+            : resources.pollutionAmount >= resourceInput;
     }
 
     IEnumerator Refining()
@@ -40,22 +40,22 @@ public class RefineryBehaviour : BuildingBase
 
         if (refineryType == RefineryType.OilBased)
         {
-            resources.Pollution += generatedPollution / resources.pollutionModifier;
-            resources.Oil -= resourceInput;
+            resources.Pollution(generatedPollution / resources.pollutionModifier);
+            resources.Oil(-resourceInput);
         }
         else
         {
-            resources.Pollution -= resourceInput;
+            resources.Pollution(-resourceInput);
         }
 
-        resources.Gallons += gallonOutput * resources.productionModifier;
+        resources.Gallons(gallonOutput * resources.productionModifier);
         Condition -= degradationRate;
 
         if (Condition <= 0)
             Break();
         else
         {
-            currentState = States.Idle;
+            base.Idle();
 
             if (upgraded && HasEnoughResources())
                 Operate();
@@ -64,23 +64,11 @@ public class RefineryBehaviour : BuildingBase
 
     public override void Operate()
     {
-        if (currentState != States.Idle || Condition <= 0 || !HasEnoughResources())
+        if (currentState != States.Idling || Condition <= 0 || !HasEnoughResources())
             return;
 
         base.Operate();
         operation = StartCoroutine(Refining());
-    }
-
-    public override void Upgrade()
-    {
-        if (resources.Cash >= upgradeCost && !upgraded)
-        {
-            resources.Cash -= upgradeCost;
-            base.Upgrade();
-
-            if (currentState == States.Idle && HasEnoughResources())
-                Operate();
-        }
     }
 
     public override void Break()
@@ -90,28 +78,40 @@ public class RefineryBehaviour : BuildingBase
         if (operation != null)
             StopCoroutine(operation);
 
-        resources.Pollution += additionalPollution / resources.pollutionModifier;
+        resources.Pollution(additionalPollution / resources.pollutionModifier);
     }
 
     public override void Repair()
     {
         if (currentState == States.Broken)
         {
-            if (resources.Cash >= fullRepairCost)
+            if (resources.cashAmount >= fullRepairCost)
             {
                 Condition = 100;
-                resources.Cash -= fullRepairCost;
+                resources.Cash(-fullRepairCost);
                 base.Repair();
 
                 if (upgraded && HasEnoughResources())
                     Operate();
             }
         }
-        else if (Condition < 100 && resources.Cash >= repairCost)
+        else if (Condition < 100 && resources.cashAmount >= repairCost)
         {
             Condition = 100;
-            resources.Cash -= repairCost;
+            resources.Cash(-repairCost);
             base.Repair();
+        }
+    }
+
+    public override void Upgrade()
+    {
+        if (resources.cashAmount >= upgradeCost && !upgraded)
+        {
+            resources.Cash(-upgradeCost);
+            base.Upgrade();
+
+            if (currentState == States.Idling && HasEnoughResources())
+                Operate();
         }
     }
 }

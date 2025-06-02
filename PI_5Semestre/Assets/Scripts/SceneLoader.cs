@@ -7,7 +7,17 @@ public class SceneLoader : MonoBehaviour
     public static SceneLoader instance;
     Animator anim;
 
-    void Awake() => instance = this;
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {

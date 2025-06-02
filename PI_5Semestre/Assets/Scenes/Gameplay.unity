@@ -2750,10 +2750,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cashAmount: 5000000
   oilAmount: 0
-  oilLimit: 0
   gallonAmount: 0
-  totalGallonsSold: 0
   pollutionAmount: 0
+  storageCapacity: 0
+  totalCashEarned: 0
+  totalOilExtracted: 0
+  totalGallonsProduced: 0
+  totalGallonsSold: 0
+  totalPollutionCaused: 0
   productionModifier: 1
   pollutionModifier: 1
 --- !u!1 &1321310972
@@ -2842,6 +2846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1356244152}
+  - component: {fileID: 1356244153}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2864,6 +2869,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356244153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356244151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153f8ae88849c74db66c8827a83a1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1372347048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,7 +3107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bc2dfaea794f44ab3b9b54c4ff6065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 12
+  gameTime: 30
 --- !u!4 &1382842372
 Transform:
   m_ObjectHideFlags: 0
@@ -4274,7 +4291,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3

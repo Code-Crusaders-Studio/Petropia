@@ -6,16 +6,16 @@ public class SpecialBuildingBehaviour : BuildingBase
     public int buffModifier;
     int defaultModifier = 1;
 
-    public override void Build()
+    public override void Start()
     {
-        base.Build();
+        base.Start();
         ApplyBuff();
     }
 
-    public override void Remove()
+    public override void OnDestroy()
     {
         RemoveBuff();
-        base.Remove();
+        base.OnDestroy();
     }
 
     void ApplyBuff()

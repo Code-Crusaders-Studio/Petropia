@@ -25,10 +25,10 @@ public class PlaceHolderGameUIHandler : MonoBehaviour
 
     void Update()
     {
-        cashDisplay.text = "Cash: " + resourceManager.Cash;
-        oilDisplay.text = "Oil: " + resourceManager.Oil + "/" + resourceManager.OilLimit;
-        gallonDisplay.text = "Gallons: " + resourceManager.Gallons;
-        pollutionDisplay.text = "Polution: " + resourceManager.Pollution;
+        cashDisplay.text = "Cash: " + resourceManager.cashAmount;
+        oilDisplay.text = "Oil: " + resourceManager.oilAmount + "/" + resourceManager.storageCapacity;
+        gallonDisplay.text = "Gallons: " + resourceManager.gallonAmount;
+        pollutionDisplay.text = "Polution: " + resourceManager.pollutionAmount;
     }
 
     public void OpenBuildingPanel(BuildingBase building, string buildingName)
@@ -54,7 +54,7 @@ public class PlaceHolderGameUIHandler : MonoBehaviour
 
         removeBtn.onClick.AddListener(() =>
         {
-            building.Remove();
+            //building.OnDestroy();
             CloseBuildingPanel();
         });
 

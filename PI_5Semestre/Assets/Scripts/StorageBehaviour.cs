@@ -5,28 +5,31 @@ public class StorageBehaviour : BuildingBase
     [Header("Storage Settings")]
     public int additionalStorage;
 
-    public override void Build()
+    public override void Start()
     {
-        base.Build();
+        base.Start();
         IncreaseCapacity();
+    }
+
+    public override void OnDestroy()
+    {
+        DecreaseCapacity();
+        base.OnDestroy();
     }
 
     void IncreaseCapacity()
     {
-        resources.OilLimit += additionalStorage;
+        resources.Storage(additionalStorage);
     }
 
     void DecreaseCapacity()
     {
-        resources.OilLimit -= additionalStorage;
+        resources.Storage(-additionalStorage);
 
-        if (resources.Oil > resources.OilLimit)
-            resources.Oil = resources.OilLimit;
-    }
-
-    public override void Remove()
-    {
-        DecreaseCapacity();
-        base.Remove();
+        if (resources.oilAmount > resources.storageCapacity)
+        {
+            int excess = resources.oilAmount - resources.storageCapacity;
+            resources.Oil(-excess);
+        }
     }
 }

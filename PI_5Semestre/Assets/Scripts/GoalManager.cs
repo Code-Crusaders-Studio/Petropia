@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -42,7 +43,7 @@ public class GoalManager : MonoBehaviour
                 }
                 else
                 {
-                    GameManager.instance.OnGameFinished();
+                    GameManager.instance.OnGameFinished(strikes, resources.totalCashEarned, resources.totalOilExtracted, resources.totalGallonsProduced, resources.totalGallonsSold, resources.totalPollutionCaused);
                     Debug.Log("game ended. well done");
 
                     yield break;
@@ -51,7 +52,6 @@ public class GoalManager : MonoBehaviour
             else
             {
                 strikes++;
-
                 Debug.Log("goal lost. strikes: " + strikes);
 
                 if (currentGoal != Goals.Final)

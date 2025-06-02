@@ -13,28 +13,27 @@ public class ShipmentBehaviour : BuildingBase
 
     bool CanShip()
     {
-        return resources.Cash >= shippingCost &&
-               resources.Gallons > 0;
+        return resources.cashAmount >= shippingCost &&
+               resources.gallonAmount > 0;
     }
 
     IEnumerator Shipping()
     {
-        int gallonsToSell = Mathf.Min(resources.Gallons, maxGallonsPerShipment);
+        int gallonsToSell = Mathf.Min(resources.gallonAmount, maxGallonsPerShipment);
 
-        resources.Cash -= shippingCost;
-        resources.totalGallonsSold += gallonsToSell;
-        resources.Gallons -= gallonsToSell;
+        resources.Cash(-shippingCost);
+        resources.Gallons(-gallonsToSell);
 
         yield return new WaitForSeconds(shippingTime);
 
-        resources.Pollution += generatedPollution / resources.pollutionModifier;
-        resources.Cash += gallonsToSell * cashPerGallon;
-        currentState = States.Idle;
+        resources.Pollution(generatedPollution / resources.pollutionModifier);
+        resources.Cash(gallonsToSell * cashPerGallon);
+        base.Idle();
     }
 
     public override void Operate()
     {
-        if (currentState != States.Idle || !CanShip())
+        if (currentState != States.Idling || !CanShip())
             return;
 
         base.Operate();

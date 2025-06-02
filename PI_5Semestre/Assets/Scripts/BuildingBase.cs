@@ -30,78 +30,58 @@ public class BuildingBase : MonoBehaviour
     public int upgradeCost;
     public bool upgraded;
 
-    public States currentState = States.Idle;
+    public States currentState = States.Idling;
     public enum States
     {
-        Idle,
+        Idling,
         Operating,
         Broken
     }
 
-    void Start()
+    public virtual void Start()
     {
         resources = GameObject.FindWithTag("GameController").GetComponent<ResourceManager>();
 
-        Build();
-    }
-
-    void UpdateID()
-    {
-        id = $"{label}{(upgraded ? "1" : "0")}{currentState}";
-
-        Debug.Log(id);
-    }
-
-    // Métodos comuns para todas as estruturas
-    public virtual void Build()
-    {
-        if (resources.Cash >= buildCost)
+        if (resources.cashAmount >= buildCost)
         {
-            resources.Cash -= buildCost;
-            UpdateID();
-
-            Debug.Log(id + " built");
+            resources.Cash(-buildCost);
         }
     }
 
-    public virtual void Remove()
+    public virtual void OnDestroy()
     {
-        Destroy(transform.parent.gameObject);
-
         Debug.Log(id + " removed");
     }
 
-    // Métodos opcionais para estruturas específicas
+    // Funções específicas
+    public virtual void Idle()
+    {
+        currentState = States.Idling;
+        Debug.Log(id + " is idling");
+    }
+
     public virtual void Operate()
     {
         currentState = States.Operating;
-        UpdateID();
-
         Debug.Log(id + " is operating");
-    }
-
-    public virtual void Upgrade()
-    {
-        upgraded = true;
-        UpdateID();
-
-        Debug.Log(id + " was upgraded");
     }
 
     public virtual void Break()
     {
         currentState = States.Broken;
-        UpdateID();
-
         Debug.Log(id + " broke");
     }
 
     public virtual void Repair()
     {
-        currentState = States.Idle;
-        UpdateID();
-
+        Idle();
         Debug.Log(id + " was repaired");
+    }
+
+    public virtual void Upgrade()
+    {
+        upgraded = true;
+        Debug.Log(id + " was upgraded");
     }
 
     public bool IsOperational()
@@ -118,12 +98,12 @@ public class BuildingBase : MonoBehaviour
 
     public bool IsUpgradable()
     {
-        return label == BuildingLabels.LandConv || 
-       label == BuildingLabels.LandSust || 
-       label == BuildingLabels.OffshoreConv || 
-       label == BuildingLabels.OffshoreSust || 
-       label == BuildingLabels.RefConv || 
-       label == BuildingLabels.RefSust || 
+        return label == BuildingLabels.LandConv ||
+       label == BuildingLabels.LandSust ||
+       label == BuildingLabels.OffshoreConv ||
+       label == BuildingLabels.OffshoreSust ||
+       label == BuildingLabels.RefConv ||
+       label == BuildingLabels.RefSust ||
        label == BuildingLabels.ResiProc;
     }
 }

@@ -6,12 +6,12 @@ public class StartGame : MonoBehaviour
 
     public void NewGame()
     {
-        SceneLoader.instance.LoadScene(/*Substituir por cena oficial*/"Progression and Data Test", 1);
+        SceneLoader.instance.LoadScene("Gameplay", 1);
     }
 
-    public void Continue()
+    public void StartTutorial()
     {
-        // Carregar jogo salvo
+        SceneLoader.instance.LoadScene("Tutorial", 1);
     }
 
     public void Back()
