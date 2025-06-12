@@ -9,8 +9,22 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2db5e515d4bc90d4f9300e5db2b680c5
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Testing/Building Behaviour Testing/Building Behaviour Test.unity
     guid: 99c9720ab356a0642a771bea13969a05
+=======
+    path: Assets/Scenes/Tutorial.unity
+    guid: 63332c09366b9c6499cad21a49a70f8d
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: 768cbca5aecb5e7459a8f747f11e75ad
+  - enabled: 1
+    path: Assets/Scenes/Results.unity
+    guid: ac77193a8c0ff6a4f874b44d475d12a0
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 924ff94a391528e439d6d81ea4553108
+>>>>>>> progressão-e-armazenamento
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
