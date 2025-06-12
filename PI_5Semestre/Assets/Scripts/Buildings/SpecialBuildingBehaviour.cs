@@ -12,10 +12,10 @@ public class SpecialBuildingBehaviour : BuildingBase
         ApplyBuff();
     }
 
-    public override void OnDestroy()
+    public override void Remove()
     {
-        RemoveBuff();
-        base.OnDestroy();
+        RevertBuff();
+        base.Remove();
     }
 
     void ApplyBuff()
@@ -32,7 +32,7 @@ public class SpecialBuildingBehaviour : BuildingBase
         }
     }
 
-    void RemoveBuff()
+    void RevertBuff()
     {
         switch (label)
         {

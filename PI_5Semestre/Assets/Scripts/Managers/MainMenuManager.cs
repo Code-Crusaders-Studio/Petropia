@@ -3,20 +3,20 @@ using UnityEngine;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject startPanel;
-    public static bool firstTime = true;
 
     void Awake()
     {
-        firstTime = PlayerPrefs.GetInt("FirstTime", 1) == 1;
+        SaveLoadSettings.LoadSettings();
+        Debug.Log(GameSettings.firstTime);
+        Debug.Log(GameSettings.audioVolume);
+        Debug.Log(GameSettings.highContrast);
     }
 
     public void Play()
     {
-        if (firstTime)
+        if (GameSettings.firstTime)
         {
-            firstTime = false;
-            PlayerPrefs.SetInt("FirstTime", 0);
-            PlayerPrefs.Save();
+            SaveLoadSettings.SwitchFirstTime();
             SceneLoader.instance.LoadScene("Tutorial", 1);
         }
         else

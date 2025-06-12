@@ -5,7 +5,6 @@ public class BuildingBase : MonoBehaviour
     protected ResourceManager resources;
 
     [Header("General Settings")]
-    public string id;
     public BuildingLabels label;
     public enum BuildingLabels
     {
@@ -40,7 +39,7 @@ public class BuildingBase : MonoBehaviour
 
     public virtual void Start()
     {
-        resources = GameObject.FindWithTag("GameController").GetComponent<ResourceManager>();
+        resources = GameObject.FindWithTag("GameController").GetComponent<ResourceManager>(); /*Talvez alterar a tag no inspetor e no script se precisar*/
 
         if (resources.cashAmount >= buildCost)
         {
@@ -48,40 +47,40 @@ public class BuildingBase : MonoBehaviour
         }
     }
 
-    public virtual void OnDestroy()
+    public virtual void Remove()
     {
-        Debug.Log(id + " removed");
+        Debug.Log(label + " removed");
     }
 
     // Funções específicas
     public virtual void Idle()
     {
         currentState = States.Idling;
-        Debug.Log(id + " is idling");
+        Debug.Log(label + " is idling");
     }
 
     public virtual void Operate()
     {
         currentState = States.Operating;
-        Debug.Log(id + " is operating");
+        Debug.Log(label + " is operating");
     }
 
     public virtual void Break()
     {
         currentState = States.Broken;
-        Debug.Log(id + " broke");
+        Debug.Log(label + " broke");
     }
 
     public virtual void Repair()
     {
         Idle();
-        Debug.Log(id + " was repaired");
+        Debug.Log(label + " was repaired");
     }
 
     public virtual void Upgrade()
     {
         upgraded = true;
-        Debug.Log(id + " was upgraded");
+        Debug.Log(label + " was upgraded");
     }
 
     public bool IsOperational()
