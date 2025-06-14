@@ -7,9 +7,9 @@ public class MainMenuManager : MonoBehaviour
     void Awake()
     {
         SaveLoadSettings.LoadSettings();
-        Debug.Log(GameSettings.firstTime);
-        Debug.Log(GameSettings.audioVolume);
-        Debug.Log(GameSettings.highContrast);
+        Debug.Log("firstTime = " + GameSettings.firstTime);
+        Debug.Log("audioVolume = " + GameSettings.audioVolume);
+        Debug.Log("highContrast = " + GameSettings.highContrast);
     }
 
     public void Play()

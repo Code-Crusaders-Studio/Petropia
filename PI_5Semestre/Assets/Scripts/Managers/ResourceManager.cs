@@ -36,7 +36,9 @@ public class ResourceManager : MonoBehaviour
             totalOilExtracted += amount;
 
         if (oilAmount == storageCapacity)
+        {
             Debug.Log("storage full");
+        }
 
         OnOilChanged?.Invoke(oilAmount);
     }

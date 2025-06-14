@@ -47,7 +47,7 @@ public class BuildingBase : MonoBehaviour
         }
     }
 
-    public virtual void Remove()
+    public virtual void OnDestroy()
     {
         Debug.Log(label + " removed");
     }

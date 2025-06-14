@@ -11,10 +11,10 @@ public class StorageBehaviour : BuildingBase
         IncreaseCapacity();
     }
 
-    public override void Remove()
+    public override void OnDestroy()
     {
         DecreaseCapacity();
-        base.Remove();
+        base.OnDestroy();
     }
 
     void IncreaseCapacity()
