@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GoalManager : MonoBehaviour
 {
-    public ResourceManager resources;
+    public static GoalManager instance;
+    ResourceManager resources;
 
     public enum Goals
     {
@@ -19,8 +20,11 @@ public class GoalManager : MonoBehaviour
     public int maxAllowedStrikes;
     float goalCheckInterval;
 
+    void Awake() => instance = this;
+
     void Start()
     {
+        resources = ResourceManager.instance;
         int totalGoals = System.Enum.GetValues(typeof(Goals)).Length;
         goalCheckInterval = TimeControls.instance.gameTime / totalGoals;
 

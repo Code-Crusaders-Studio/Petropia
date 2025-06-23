@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
+    public static ResourceManager instance;
+
     [Header("Initial Settings")]
     public int cashAmount = 500000;
     public int oilAmount = 0;
@@ -17,6 +19,8 @@ public class ResourceManager : MonoBehaviour
     public int pollutionModifier = 1;
 
     public event Action<int> OnCashChanged, OnOilChanged, OnGallonsChanged, OnPollutionChanged, OnStorageChanged;
+
+    void Awake() => instance = this;
 
     public void Cash(int amount)
     {
@@ -37,6 +41,7 @@ public class ResourceManager : MonoBehaviour
 
         if (oilAmount == storageCapacity)
         {
+            GameUI.instance.StorageWarning();
             Debug.Log("storage full");
         }
 

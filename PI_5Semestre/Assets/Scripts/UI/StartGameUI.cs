@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StartGame : MonoBehaviour
+public class StartGameUI : MonoBehaviour
 {
     public GameObject mainMenu;
 

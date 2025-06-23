@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: 4
+  description: "Armazena at\xE9 100 unidades de petr\xF3leo."
   terrain: Ground
   buildCost: 10000
   generatedPollution: 0

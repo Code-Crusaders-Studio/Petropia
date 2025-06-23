@@ -132,6 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: 9
+  description: "Utiliza a polui\xE7\xE3o geral para gerar combust\xEDvel. Diferente
+    das refinarias, consome 25 da polui\xE7\xE3o geral do polo, e leva 30 segundos
+    para gerar 1 gal\xE3o de combust\xEDvel."
   terrain: Ground
   buildCost: 50000
   generatedPollution: 0

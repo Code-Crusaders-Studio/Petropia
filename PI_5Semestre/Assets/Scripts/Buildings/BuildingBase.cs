@@ -23,6 +23,7 @@ public class BuildingBase : MonoBehaviour
         Capacitation
     }
 
+    public string description;
     public string terrain;
     public int buildCost;
     public int generatedPollution;
@@ -39,7 +40,7 @@ public class BuildingBase : MonoBehaviour
 
     public virtual void Start()
     {
-        resources = GameObject.FindWithTag("GameController").GetComponent<ResourceManager>(); /*Talvez alterar a tag no inspetor e no script se precisar*/
+        resources = ResourceManager.instance;
 
         if (resources.cashAmount >= buildCost)
         {
@@ -95,14 +96,21 @@ public class BuildingBase : MonoBehaviour
        label == BuildingLabels.Port;
     }
 
+    public bool CanBeRepaired()
+    {
+        return IsOperational() && label != BuildingLabels.Port;
+    }
+
     public bool IsUpgradable()
     {
-        return label == BuildingLabels.LandConv ||
-       label == BuildingLabels.LandSust ||
-       label == BuildingLabels.OffshoreConv ||
-       label == BuildingLabels.OffshoreSust ||
-       label == BuildingLabels.RefConv ||
-       label == BuildingLabels.RefSust ||
-       label == BuildingLabels.ResiProc;
+        return !upgraded && (
+            label == BuildingLabels.LandConv ||
+            label == BuildingLabels.LandSust ||
+            label == BuildingLabels.OffshoreConv ||
+            label == BuildingLabels.OffshoreSust ||
+            label == BuildingLabels.RefConv ||
+            label == BuildingLabels.RefSust ||
+            label == BuildingLabels.ResiProc
+        );
     }
 }

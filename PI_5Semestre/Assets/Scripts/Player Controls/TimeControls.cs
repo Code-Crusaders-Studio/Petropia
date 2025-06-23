@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class TimeControls : MonoBehaviour
 {
     public static TimeControls instance;
     public int gameTime;
     Coroutine timerCoroutine;
+    public event Action<int> OnTimeChanged;
 
     void Awake() => instance = this;
 
@@ -20,11 +22,17 @@ public class TimeControls : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
 
-            gameTime -= 1;
+            DecreaseTime();
 
             if (gameTime <= 0)
                 StopTimer();
         }
+    }
+
+    void DecreaseTime()
+    {
+        gameTime -= 1;
+        OnTimeChanged?.Invoke(gameTime);
     }
 
     public void StartTimer()

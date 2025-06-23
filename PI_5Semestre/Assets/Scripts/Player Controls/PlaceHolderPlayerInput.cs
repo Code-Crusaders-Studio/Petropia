@@ -8,13 +8,11 @@ public class PlaceHolderPlayerInput : MonoBehaviour
     bool isPressingOnObject = false;
     float pressingDuration = 0.5f, currentPressingTime = 0f;
 
-    PlaceHolderGameUIHandler uiHandler;
     BuildingBase building;
 
     void Start()
     {
         mainCamera = Camera.main;
-        uiHandler = PlaceHolderGameUIHandler.instance;
     }
 
     void Update()
@@ -49,7 +47,7 @@ public class PlaceHolderPlayerInput : MonoBehaviour
                         isPressingOnObject = true;
 
                         if (building != null)
-                            PlaceHolderGameUIHandler.instance.OpenBuildingPanel(building, hitObject.name);
+                            GameUI.instance.OpenBuildingPanel(building, hitObject, hitObject.name, building.description);
                     }
                 }
                 else
