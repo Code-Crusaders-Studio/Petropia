@@ -75,12 +75,11 @@ public class GameUI : MonoBehaviour
         oilTxt.text = "Petróleo: " + resources.oilAmount + "/" + newValue;
     }
 
-    void UpdateTimeDisplay(int timeLeft)
+    void UpdateTimeDisplay(int timeElapsed)
     {
-        int totalDuration = 1200;  // Mudar se o game time de TimeControls também mudar (tem que ser o valor inicial de game time)
-        int timeElapsed = totalDuration - timeLeft;
-
+        int totalDuration = TimeControls.instance.totalGameTime;
         float totalSimulatedYears = 10f;
+
         float secondsPerSimulatedYear = totalDuration / totalSimulatedYears;
         float monthsPerSecond = 12f / secondsPerSimulatedYear;
 

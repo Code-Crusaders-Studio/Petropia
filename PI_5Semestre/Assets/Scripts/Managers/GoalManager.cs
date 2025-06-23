@@ -26,7 +26,7 @@ public class GoalManager : MonoBehaviour
     {
         resources = ResourceManager.instance;
         int totalGoals = System.Enum.GetValues(typeof(Goals)).Length;
-        goalCheckInterval = TimeControls.instance.gameTime / totalGoals;
+        goalCheckInterval = TimeControls.instance.totalGameTime / totalGoals;
 
         StartCoroutine(CheckGoal());
     }

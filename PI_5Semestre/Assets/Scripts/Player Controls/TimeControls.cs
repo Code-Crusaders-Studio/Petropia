@@ -5,45 +5,32 @@ using System;
 public class TimeControls : MonoBehaviour
 {
     public static TimeControls instance;
-    public int gameTime;
-    Coroutine timerCoroutine;
+    public int totalGameTime;
+    [HideInInspector] public int gameTime = 0;
     public event Action<int> OnTimeChanged;
 
     void Awake() => instance = this;
 
     void Start()
     {
-        StartTimer();
+        StartCoroutine(Timer());
     }
 
     IEnumerator Timer()
     {
-        while (true)
+        while (gameTime < totalGameTime)
         {
             yield return new WaitForSeconds(1);
 
-            DecreaseTime();
-
-            if (gameTime <= 0)
-                StopTimer();
+            PassTime();
         }
     }
 
-    void DecreaseTime()
+    void PassTime()
     {
-        gameTime -= 1;
+        gameTime++;
         OnTimeChanged?.Invoke(gameTime);
-    }
-
-    public void StartTimer()
-    {
-        timerCoroutine = StartCoroutine(Timer());
-    }
-
-    public void StopTimer()
-    {
-        if (timerCoroutine != null)
-            StopCoroutine(timerCoroutine);
+        Debug.Log("gameTime: " + gameTime);
     }
 
     public void SetSpeed(int value)

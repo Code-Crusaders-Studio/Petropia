@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1382842371}
+      - m_Target: {fileID: 1382842373}
         m_TargetAssemblyTypeName: TimeControls, Assembly-CSharp
         m_MethodName: SetSpeed
         m_Mode: 3
@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1382842371}
+      - m_Target: {fileID: 1382842373}
         m_TargetAssemblyTypeName: TimeControls, Assembly-CSharp
         m_MethodName: SetSpeed
         m_Mode: 3
@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1382842371}
+      - m_Target: {fileID: 1382842373}
         m_TargetAssemblyTypeName: TimeControls, Assembly-CSharp
         m_MethodName: SetSpeed
         m_Mode: 3
@@ -3223,7 +3223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1382842372}
-  - component: {fileID: 1382842371}
+  - component: {fileID: 1382842373}
   m_Layer: 0
   m_Name: Time Controller
   m_TagString: Untagged
@@ -3231,19 +3231,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1382842371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382842370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29bc2dfaea794f44ab3b9b54c4ff6065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameTime: 1200
 --- !u!4 &1382842372
 Transform:
   m_ObjectHideFlags: 0
@@ -3259,6 +3246,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1382842373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382842370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bc2dfaea794f44ab3b9b54c4ff6065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalGameTime: 1200
+  gameTime: 0
 --- !u!1 &1487323033
 GameObject:
   m_ObjectHideFlags: 0
