@@ -2,35 +2,39 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public GameObject structurePrefOffshore, structurePrefLand;
+    [HideInInspector] public GameObject curPref;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
         {
-            CreateStructure(structurePrefOffshore);
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            CreateStructure(structurePrefLand);
+            CreateStructure();
         }
     }
 
-    void CreateStructure(GameObject prefObject)
+    public void CreateStructure()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitMouse;
-
-        if (Physics.Raycast(ray, out hitMouse))
+        if (curPref != null)
         {
-            GameObject collObj = hitMouse.collider.gameObject;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitMouse;
 
-            if (collObj.layer == prefObject.layer && !collObj.CompareTag(prefObject.tag))
+            if (Physics.Raycast(ray, out hitMouse))
             {
-                Vector3 posStructure = new Vector3(collObj.transform.position.x, collObj.transform.position.y + 1, collObj.transform.position.z);
+                GameObject collObj = hitMouse.collider.gameObject;
 
-                Instantiate(prefObject, posStructure, Quaternion.identity);
+                if (collObj.layer == curPref.layer && !collObj.CompareTag(curPref.tag))
+                {
+                    Vector3 posStructure = new Vector3(collObj.transform.position.x, collObj.transform.position.y + 1, collObj.transform.position.z);
+
+                    Instantiate(curPref, posStructure, Quaternion.identity);
+                    curPref = null;
+                }
             }
+        }
+        else
+        {
+            Debug.Log($"Compre alguma estrutura na loja");
         }
     }
 }
