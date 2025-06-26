@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2743295236242273548}
   - component: {fileID: 6483010800229019198}
   - component: {fileID: 6461872082279015872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TankMed
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4222190076230006327}
   - component: {fileID: 4890413777226352191}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}

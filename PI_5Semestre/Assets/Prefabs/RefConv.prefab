@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1953313618880197935}
   - component: {fileID: 4247929748945988395}
   - component: {fileID: 7197437574152818185}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RefConv
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1483623908072176968}
   - component: {fileID: 8364864666580735991}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}

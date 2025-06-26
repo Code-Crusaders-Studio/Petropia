@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 379016111738127911}
   - component: {fileID: 878116673024609472}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,9 +72,9 @@ GameObject:
   - component: {fileID: 2070424902558204334}
   - component: {fileID: 8472095173314010053}
   - component: {fileID: 997294820238405119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LandSust
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

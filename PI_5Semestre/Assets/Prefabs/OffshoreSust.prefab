@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8502590995808948329}
   - component: {fileID: 2039783575195050627}
   - component: {fileID: 3888387987747551562}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: OffshoreSust
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5380585681841291997}
   - component: {fileID: 1423298363583652464}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}

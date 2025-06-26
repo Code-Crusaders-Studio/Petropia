@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3377517629583291137}
   - component: {fileID: 204620500781729382}
   - component: {fileID: 3639986692005547958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capacitation
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5166491576722471304}
   - component: {fileID: 4479659263132364862}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5584570318239649106}
   - component: {fileID: 8133167276547137146}
   - component: {fileID: 4587551480169249977}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TankSmall
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501683554413793515}
   - component: {fileID: 8365191732991331039}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}

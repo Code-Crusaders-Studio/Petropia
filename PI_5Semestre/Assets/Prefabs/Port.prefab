@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558037747628809233}
   - component: {fileID: 2235381502035496758}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,9 +68,9 @@ GameObject:
   - component: {fileID: 557028103132754597}
   - component: {fileID: 7345592865813367801}
   - component: {fileID: 2857869464799517032}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Port
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

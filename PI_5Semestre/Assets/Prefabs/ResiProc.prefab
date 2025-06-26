@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6558499678024573057}
   - component: {fileID: 6403644315814451924}
   - component: {fileID: 3470255179552445215}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ResiProc
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 221803271315889584}
   - component: {fileID: 3261053640707230167}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}

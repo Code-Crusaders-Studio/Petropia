@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5750247377446030979}
   - component: {fileID: 5694195498656080025}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,9 +72,9 @@ GameObject:
   - component: {fileID: 2476156108724291519}
   - component: {fileID: 4533015567635059960}
   - component: {fileID: 339217002211494406}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: OffshoreConv
-  m_TagString: Untagged
+  m_TagString: Structures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
