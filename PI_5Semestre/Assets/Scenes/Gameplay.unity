@@ -511,9 +511,21 @@ PrefabInstance:
       value: WorldGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 7183411091579604064, guid: 136a39609251ec545a95f1174470f419, type: 3}
+      propertyPath: cube
+      value: 
+      objectReference: {fileID: 8758262413331218787, guid: 829f991d48fe183478be40a0523a2b4c, type: 3}
+    - target: {fileID: 7183411091579604064, guid: 136a39609251ec545a95f1174470f419, type: 3}
+      propertyPath: land
+      value: 
+      objectReference: {fileID: 4314266233856140635, guid: 1a89d390edc7fb04e8982b39d94c6206, type: 3}
+    - target: {fileID: 7183411091579604064, guid: 136a39609251ec545a95f1174470f419, type: 3}
       propertyPath: rend
       value: 
       objectReference: {fileID: 592168689}
+    - target: {fileID: 7183411091579604064, guid: 136a39609251ec545a95f1174470f419, type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: -3702924943875223191, guid: a1fae9fc0409ec74bbb172a3a5a72aab, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

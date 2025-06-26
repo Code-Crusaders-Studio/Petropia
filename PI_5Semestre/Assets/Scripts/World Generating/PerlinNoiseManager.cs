@@ -20,6 +20,8 @@ public class PerlinNoiseManager : MonoBehaviour
 
     [SerializeField] private Renderer rend;
 
+    [SerializeField] private string landHex = "#008000", waterHex = "#0000ff";
+
     private Color[] col;
     private Texture2D noiseTex;
     [SerializeField] private Gradient gradient;
@@ -32,12 +34,18 @@ public class PerlinNoiseManager : MonoBehaviour
         rend.sharedMaterial.mainTexture = noiseTex;
         col = new Color[sizeIsland * sizeIsland];
 
+        Color waterColor;
+        Color landColor;
+
         for (int x = 0; x < size; x++)
         {
             for (int y = 0; y < size; y++)
             {
-                objects[x, y] = Instantiate(cube, new Vector3(x + (size / 2) * -1, 0, y + (size / 2) * -1), Quaternion.identity);
-                objects[x, y].GetComponent<Renderer>().material.color = Color.blue;
+                if (ColorUtility.TryParseHtmlString(waterHex, out waterColor))
+                {
+                    objects[x, y] = Instantiate(cube, new Vector3(x + (size / 2) * -1, 0, y + (size / 2) * -1), Quaternion.identity);
+                    objects[x, y].GetComponent<Renderer>().material.color = waterColor;
+                }
             }
         }
 
@@ -53,16 +61,16 @@ public class PerlinNoiseManager : MonoBehaviour
 
                 float posY = Mathf.Round(elevation[x2, y2] * multiplier);
 
-                if (posY < 0)
+                if (posY < 0 && ColorUtility.TryParseHtmlString(waterHex, out waterColor))
                 {
                     posY = 0;
-                    objects[x, y].GetComponent<Renderer>().material.color = Color.blue;
+                    objects[x, y].GetComponent<Renderer>().material.color = waterColor;
                     objects[x, y].layer = 4;
                 }
-                else
+                else if (posY >= 0 && ColorUtility.TryParseHtmlString(landHex, out landColor))
                 {
-                    posY = 1;
-                    objects[x, y].GetComponent<Renderer>().material.color = Color.green;
+                    posY = 0.25f;
+                    objects[x, y].GetComponent<Renderer>().material.color = landColor;
                     objects[x, y].layer = 3;
                 }
 

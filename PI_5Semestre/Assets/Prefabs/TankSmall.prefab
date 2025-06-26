@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5584570318239649106}
   - component: {fileID: 8133167276547137146}
   - component: {fileID: 4587551480169249977}
+  - component: {fileID: 1107863415999886759}
   m_Layer: 3
   m_Name: TankSmall
   m_TagString: Structures
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3697262479213689689}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: -2844965018901992081, guid: c3acff43fd8263f41b3e6d33ff5196bf, type: 3}
 --- !u!23 &4587551480169249977
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +66,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: -5439073051578601075, guid: c3acff43fd8263f41b3e6d33ff5196bf, type: 3}
+  - {fileID: -7280866889036411497, guid: c3acff43fd8263f41b3e6d33ff5196bf, type: 3}
+  - {fileID: -974262549384822930, guid: c3acff43fd8263f41b3e6d33ff5196bf, type: 3}
+  - {fileID: 6848175626467367903, guid: c3acff43fd8263f41b3e6d33ff5196bf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,6 +91,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1107863415999886759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697262479213689689}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3829285, y: 0.43270797, z: 0.2909178}
+  m_Center: {x: 0, y: 0.000000007450581, z: 0}
 --- !u!1 &7679467719176941461
 GameObject:
   m_ObjectHideFlags: 0
