@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using TMPro;
 
 public class ShopManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -13,6 +14,8 @@ public class ShopManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private Coroutine holdCoroutine;
     private bool wasHeld;
+
+    [SerializeField] private TMP_Text buildingName, buildingDescription;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -50,5 +53,11 @@ public class ShopManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void OnLongPress()
     {
         Debug.Log($"Descrição da {curStructure.name}");
+
+        GameUI.instance.buildingPanelShop.SetActive(true);
+        GameUI.instance.buildingPanel.SetActive(false);
+
+        buildingName.text = curStructure.name;
+        buildingDescription.text = curStructure.GetComponentInChildren<BuildingBase>().description;
     }
 }

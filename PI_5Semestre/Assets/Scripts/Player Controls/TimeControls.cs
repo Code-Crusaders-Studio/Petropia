@@ -30,7 +30,7 @@ public class TimeControls : MonoBehaviour
     {
         gameTime++;
         OnTimeChanged?.Invoke(gameTime);
-        Debug.Log("gameTime: " + gameTime);
+        //Debug.Log("gameTime: " + gameTime);
     }
 
     public void SetSpeed(int value)

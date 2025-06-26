@@ -24,7 +24,7 @@ public class OilWellsGenerator : MonoBehaviour
             int y = Random.Range(0, obj_NodesWorld.GetLength(1));
 
             obj_NodesWorld[x, y].gameObject.tag = "Oil Wells";
-            Debug.Log(obj_NodesWorld[x, y].name);
+            //Debug.Log(obj_NodesWorld[x, y].name);
         }
     }
 }

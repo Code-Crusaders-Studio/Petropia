@@ -15,6 +15,7 @@ public class GameUI : MonoBehaviour
 
     [Header("Building Panel Components")]
     public GameObject buildingPanel;
+    public GameObject buildingPanelShop;
     public TMP_Text buildingNameTxt;
     public TMP_Text buildingDescriptionTxt;
     public Button upgradeBtn;
@@ -94,6 +95,7 @@ public class GameUI : MonoBehaviour
     public void OpenBuildingPanel(BuildingBase building, GameObject buildingObject, string buildingName, string buildingDescription)
     {
         buildingPanel.SetActive(true);
+        buildingPanelShop.SetActive(false);
         buildingNameTxt.text = buildingName;
         buildingDescriptionTxt.text = buildingDescription;
 
@@ -124,6 +126,7 @@ public class GameUI : MonoBehaviour
     public void CloseBuildingPanel()
     {
         buildingPanel.SetActive(false);
+        buildingPanelShop.SetActive(false);
     }
 
     public void StorageWarning()
