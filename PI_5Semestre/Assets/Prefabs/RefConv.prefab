@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4247929748945988395}
   - component: {fileID: 7197437574152818185}
   - component: {fileID: 4353952416972029553}
+  - component: {fileID: 3239780627082628530}
   m_Layer: 3
   m_Name: RefConv
   m_TagString: Structures
@@ -113,6 +114,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.93033344, y: 0.6669521, z: 0.93033344}
   m_Center: {x: 0, y: 0.000000029802322, z: 0}
+--- !u!114 &3239780627082628530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586242865682442605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab0fc590cabce4a83da3289af3b9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMats:
+  - {fileID: 6848175626467367903, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: -5439073051578601075, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: 7762471515657228030, guid: a1f8a40f3ee40034faaaf04ac7689e78, type: 3}
+  - {fileID: 765718223594540493, guid: cbff69ddc18bd64489180af71f92fa32, type: 3}
+  - {fileID: -8081228178661188526, guid: cbff69ddc18bd64489180af71f92fa32, type: 3}
+  highContrastMats:
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
 --- !u!1 &3158559873612818202
 GameObject:
   m_ObjectHideFlags: 0

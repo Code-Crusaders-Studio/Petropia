@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2039783575195050627}
   - component: {fileID: 3888387987747551562}
   - component: {fileID: 8462101363975776082}
+  - component: {fileID: 2186892766625786668}
   m_Layer: 4
   m_Name: OffshoreSust
   m_TagString: Structures
@@ -113,6 +114,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8103564, y: 0.993553, z: 0.68690383}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2186892766625786668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015389068929593504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab0fc590cabce4a83da3289af3b9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMats:
+  - {fileID: 5258131358227053084, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: -974262549384822930, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: 4435752302711280001, guid: dbdcc1408525863408ba9d486c79054c, type: 3}
+  - {fileID: -4415210033302528072, guid: dbdcc1408525863408ba9d486c79054c, type: 3}
+  - {fileID: -257563533013959296, guid: 1ba907010faf5414085e0bd4cc0a85b1, type: 3}
+  highContrastMats:
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
 --- !u!1 &2022362346360971181
 GameObject:
   m_ObjectHideFlags: 0

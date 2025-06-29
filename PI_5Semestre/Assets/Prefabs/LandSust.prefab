@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 8472095173314010053}
   - component: {fileID: 997294820238405119}
   - component: {fileID: 5177244448492648254}
+  - component: {fileID: 6548619547696105826}
   m_Layer: 3
   m_Name: LandSust
   m_TagString: Structures
@@ -173,3 +174,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.48335445, y: 0.5536974, z: 0.7263988}
   m_Center: {x: 0, y: -0.000000029802322, z: 0}
+--- !u!114 &6548619547696105826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453075628179725686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab0fc590cabce4a83da3289af3b9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMats:
+  - {fileID: -4415210033302528072, guid: dbdcc1408525863408ba9d486c79054c, type: 3}
+  - {fileID: 5258131358227053084, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: -974262549384822930, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: 6848175626467367903, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  highContrastMats:
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}
+  - {fileID: 2100000, guid: b0a6c50e302e44942a7c1e32ee6db0e3, type: 2}

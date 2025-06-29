@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6764734782571059703}
   - component: {fileID: 838190222683235799}
   - component: {fileID: 1519523965155576066}
+  - component: {fileID: 7891811596578385147}
   m_Layer: 3
   m_Name: TankBig
   m_TagString: Structures
@@ -112,6 +113,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7084897, y: 0.80059123, z: 0.5382526}
   m_Center: {x: 0, y: -0.000000044703484, z: 0}
+--- !u!114 &7891811596578385147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6158483250671785548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab0fc590cabce4a83da3289af3b9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMats:
+  - {fileID: -5439073051578601075, guid: a1f8a40f3ee40034faaaf04ac7689e78, type: 3}
+  - {fileID: -7280866889036411497, guid: a1f8a40f3ee40034faaaf04ac7689e78, type: 3}
+  - {fileID: -974262549384822930, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: 6848175626467367903, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  highContrastMats:
+  - {fileID: 4304046721822202851, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: 4304046721822202851, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: 4304046721822202851, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: 4304046721822202851, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
 --- !u!1 &6474897136183046478
 GameObject:
   m_ObjectHideFlags: 0

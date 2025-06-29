@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 7036855138339740876}
   - component: {fileID: 8605426467140243245}
   - component: {fileID: 536262346448097534}
+  - component: {fileID: 7048804011384998517}
   m_Layer: 3
   m_Name: Research
   m_TagString: Structures
@@ -168,3 +169,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3913073, y: 0.351835, z: 0.7674027}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7048804011384998517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001176832865198032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab0fc590cabce4a83da3289af3b9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMats:
+  - {fileID: -974262549384822930, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: 5258131358227053084, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: -6401822308606861298, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: 4304046721822202851, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: -5439073051578601075, guid: a1f8a40f3ee40034faaaf04ac7689e78, type: 3}
+  - {fileID: 6848175626467367903, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  highContrastMats:
+  - {fileID: 2100000, guid: 15ac4d6f7e4d40f4080bfd8fca653c32, type: 2}
+  - {fileID: 2100000, guid: 15ac4d6f7e4d40f4080bfd8fca653c32, type: 2}
+  - {fileID: 2100000, guid: 15ac4d6f7e4d40f4080bfd8fca653c32, type: 2}
+  - {fileID: 2100000, guid: 15ac4d6f7e4d40f4080bfd8fca653c32, type: 2}
+  - {fileID: 2100000, guid: 15ac4d6f7e4d40f4080bfd8fca653c32, type: 2}
+  - {fileID: 2100000, guid: 15ac4d6f7e4d40f4080bfd8fca653c32, type: 2}

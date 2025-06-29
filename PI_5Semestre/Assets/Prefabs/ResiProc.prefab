@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6403644315814451924}
   - component: {fileID: 3470255179552445215}
   - component: {fileID: 4801586208297155154}
+  - component: {fileID: 2312715750397089427}
   m_Layer: 3
   m_Name: ResiProc
   m_TagString: Structures
@@ -113,6 +114,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9742094, y: 0.77707595, z: 0.97420925}
   m_Center: {x: 0, y: 0.000000029802322, z: 0}
+--- !u!114 &2312715750397089427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883975688081628690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab0fc590cabce4a83da3289af3b9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMats:
+  - {fileID: 4435752302711280001, guid: dbdcc1408525863408ba9d486c79054c, type: 3}
+  - {fileID: -7565269152293838782, guid: dbdcc1408525863408ba9d486c79054c, type: 3}
+  - {fileID: 5258131358227053084, guid: 743a4f6184f8dd74a8e586b5ee7b990e, type: 3}
+  - {fileID: -974262549384822930, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  - {fileID: 6848175626467367903, guid: 7c112801ad3c64848ace0193fb69d698, type: 3}
+  highContrastMats:
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
+  - {fileID: 2100000, guid: 56abc217e41c6144183849e31bafc02c, type: 2}
 --- !u!1 &3701468930102000036
 GameObject:
   m_ObjectHideFlags: 0
