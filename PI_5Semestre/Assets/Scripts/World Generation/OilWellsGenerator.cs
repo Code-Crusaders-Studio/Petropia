@@ -4,6 +4,9 @@ public class OilWellsGenerator : MonoBehaviour
 {
     [SerializeField] private int num_OilWells;
 
+    [SerializeField] private Material OilMaterial;
+    [SerializeField] private Material OilContrastMaterial;
+
     private GameObject[,] obj_NodesWorld;
 
     public void GenerateOilWells(GameObject[,] objects)
@@ -24,6 +27,9 @@ public class OilWellsGenerator : MonoBehaviour
             int y = Random.Range(0, obj_NodesWorld.GetLength(1));
 
             obj_NodesWorld[x, y].gameObject.tag = "Oil Wells";
+            obj_NodesWorld[x, y].gameObject.GetComponent<Renderer>().material = OilMaterial;
+            obj_NodesWorld[x, y].gameObject.GetComponent<MaterialHandler>().regularMats[0] = OilMaterial;
+            obj_NodesWorld[x, y].gameObject.GetComponent<MaterialHandler>().highContrastMats[0] = OilContrastMaterial;
             //Debug.Log(obj_NodesWorld[x, y].name);
         }
     }

@@ -47,6 +47,10 @@ public class BuildingBase : MonoBehaviour
         {
             resources.Cash(-buildCost);
         }
+        else
+        {
+            Destroy(transform.parent.gameObject);
+        }
     }
 
     public virtual void OnDestroy()
