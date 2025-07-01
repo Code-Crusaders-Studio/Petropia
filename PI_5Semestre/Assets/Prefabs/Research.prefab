@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: 11
-  description: "Estruturas passam a gerar apenas metade da polui\xE7\xE3o (regular
-    e adicional)."
+  buildingName: "Centro de Pesquisas Sustent\xE1veis"
+  buildingDescription: "Estruturas passam a gerar apenas metade da polui\xE7\xE3o
+    (regular e adicional)."
   terrain: Ground
   buildCost: 1000000
   generatedPollution: 0

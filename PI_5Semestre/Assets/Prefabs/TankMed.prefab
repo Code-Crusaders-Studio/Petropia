@@ -180,7 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: 5
-  description: "Armazena at\xE9 300 unidades de petr\xF3leo."
+  buildingName: Tanque de Armazenamento (M)
+  buildingDescription: "Armazena at\xE9 300 unidades de petr\xF3leo."
   terrain: Ground
   buildCost: 30000
   generatedPollution: 0

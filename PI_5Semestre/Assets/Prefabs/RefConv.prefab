@@ -183,8 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: 7
-  description: "Leva 10 segundos para transformar 25 unidades de petr\xF3leo cru
-    em 1 gal\xE3o de combust\xEDvel."
+  buildingName: Refinaria Convencional
+  buildingDescription: "Leva 10 segundos para transformar 25 unidades de petr\xF3leo
+    cru em 1 gal\xE3o de combust\xEDvel."
   terrain: Ground
   buildCost: 20000
   generatedPollution: 50

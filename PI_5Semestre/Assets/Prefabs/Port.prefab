@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: 10
-  description: "Permite a exporta\xE7\xE3o de at\xE9 100 gal\xF5es de combust\xEDvel
+  buildingName: "Porto de Exporta\xE7\xE3o"
+  buildingDescription: "Permite a exporta\xE7\xE3o de at\xE9 100 gal\xF5es de combust\xEDvel
     por vez. Demora 15 segundos para ir e voltar."
   terrain: Water
   buildCost: 50000

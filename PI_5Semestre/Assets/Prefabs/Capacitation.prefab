@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: 12
-  description: Extratoras e Refinarias produzem 2x mais recursos.
+  buildingName: "Centro de Capacita\xE7\xE3o"
+  buildingDescription: Extratoras e Refinarias produzem 2x mais recursos.
   terrain: Ground
   buildCost: 1000000
   generatedPollution: 0

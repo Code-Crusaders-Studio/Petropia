@@ -23,7 +23,8 @@ public class BuildingBase : MonoBehaviour
         Capacitation
     }
 
-    public string description;
+    public string buildingName;
+    public string buildingDescription;
     public string terrain;
     public int buildCost;
     public int generatedPollution;

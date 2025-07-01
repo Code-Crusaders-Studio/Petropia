@@ -55,6 +55,9 @@ public class InputManager : MonoBehaviour
             }
             StopAllCoroutines();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space)) // Atalho para alto contraste
+            GameSettings.highContrast = !GameSettings.highContrast;
     }
 
     public void CreateStructure()
@@ -107,6 +110,6 @@ public class InputManager : MonoBehaviour
         building = hitObject.GetComponentInChildren<BuildingBase>();
 
         if (building != null)
-            GameUI.instance.OpenBuildingPanel(building, hitObject, hitObject.name, building.description);
+            GameUI.instance.OpenBuildingPanel(building, hitObject, building.buildingName, building.buildingDescription);
     }
 }

@@ -57,7 +57,7 @@ public class ShopManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         GameUI.instance.buildingPanelShop.SetActive(true);
         GameUI.instance.buildingPanel.SetActive(false);
 
-        buildingName.text = curStructure.name;
-        buildingDescription.text = curStructure.GetComponentInChildren<BuildingBase>().description;
+        buildingName.text = curStructure.GetComponentInChildren<BuildingBase>().buildingName;
+        buildingDescription.text = curStructure.GetComponentInChildren<BuildingBase>().buildingDescription;
     }
 }
