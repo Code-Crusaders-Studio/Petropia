@@ -53,27 +53,27 @@ public class GameUI : MonoBehaviour
 
     void UpdateCashDisplay(int newValue)
     {
-        cashTxt.text = "Dinheiro: $" + newValue.ToString("N0");
+        cashTxt.text = "" + newValue.ToString("N0");
     }
 
     void UpdateOilDisplay(int newValue)
     {
-        oilTxt.text = "Petróleo: " + newValue + "/" + resources.storageCapacity;
+        oilTxt.text = "" + newValue + "/" + resources.storageCapacity;
     }
 
     void UpdateGallonDisplay(int newValue)
     {
-        gallonTxt.text = "Galões: " + newValue;
+        gallonTxt.text = "" + newValue;
     }
 
     void UpdatePollutionDisplay(int newValue)
     {
-        pollutionTxt.text = "Poluição: " + newValue;
+        pollutionTxt.text = "" + newValue;
     }
 
     void UpdateStorageDisplay(int newValue)
     {
-        oilTxt.text = "Petróleo: " + resources.oilAmount + "/" + newValue;
+        oilTxt.text = "" + resources.oilAmount + "/" + newValue;
     }
 
     void UpdateTimeDisplay(int timeElapsed)
