@@ -3,6 +3,8 @@ using UnityEngine;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject startPanel;
+    public GameObject optionsPanel;
+    public GameObject creditsPanel;
 
     void Awake()
     {
@@ -33,8 +35,18 @@ public class MainMenuManager : MonoBehaviour
 
     public void Options()
     {
-        // Exibir painel de configurações
+        optionsPanel.SetActive(false);
         // PlayerPrefs.DeleteAll(); Apaga todo o progresso | Colocar futuramente no painel de opções
+    }
+
+    public void CloseOptions()
+    {
+
+    }
+
+    public void CloseCredits()
+    {
+        
     }
 
     public void Quit()
