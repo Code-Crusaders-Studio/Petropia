@@ -4,6 +4,11 @@ public class ShowShopManager : MonoBehaviour
 {
     [SerializeField] private GameObject extractorList, storageList, refineryList, specialList;
 
+    void Start()
+    {
+        ShowExtractor();
+    }
+    
     public void ShowExtractor()
     {
         extractorList.gameObject.SetActive(true);

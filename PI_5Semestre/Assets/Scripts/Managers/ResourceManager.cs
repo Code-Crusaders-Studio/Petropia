@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class ResourceManager : MonoBehaviour
     public event Action<int> OnCashChanged, OnOilChanged, OnGallonsChanged, OnPollutionChanged, OnStorageChanged;
 
     void Awake() => instance = this;
+
+    ///
+
+    public Image gallonGoalBar;
+
+    ///
 
     public void Cash(int amount)
     {
@@ -55,7 +62,11 @@ public class ResourceManager : MonoBehaviour
         if (amount > 0)
             totalGallonsProduced += amount;
         else if (amount < 0)
+        {
             totalGallonsSold += -amount;
+            gallonGoalBar.fillAmount = totalGallonsSold / 2000f;
+        }
+         
 
         OnGallonsChanged?.Invoke(gallonAmount);
     }
