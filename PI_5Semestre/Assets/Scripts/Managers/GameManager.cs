@@ -14,18 +14,22 @@ public class GameManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        PlayerData.score = 0;
+        PlayerData.rating = "";
+        PlayerPrefs.Save();
     }
 
     public void OnGameFinished(int strikes, int cashEarned, int oilExtracted, int gallonsProduced, int gallonsSold, int pollutionCaused)
     {
         PlayerData.rating = Rating(strikes, cashEarned, oilExtracted, gallonsProduced, gallonsSold, pollutionCaused);
 
-        SceneLoader.instance.LoadScene("Results", 1);
+        SceneLoader.instance.LoadScene("Results", 0);
     }
 
     public void OnGameOver()
     {
-        SceneLoader.instance.LoadScene("GameOver", 1);
+        SceneLoader.instance.LoadScene("GameOver", 0);
     }
 
     public string Rating(int strikes, int cashEarned, int oilExtracted, int gallonsProduced, int gallonsSold, int pollutionCaused)

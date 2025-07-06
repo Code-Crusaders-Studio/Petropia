@@ -16,6 +16,12 @@ public class TimeControls : MonoBehaviour
         StartCoroutine(Timer());
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+            SetSpeed(32);
+    }
+
     IEnumerator Timer()
     {
         while (gameTime < totalGameTime)
@@ -36,5 +42,10 @@ public class TimeControls : MonoBehaviour
     public void SetSpeed(int value)
     {
         Time.timeScale = value;
+    }
+
+    void OnDestroy()
+    {
+        SetSpeed(1);
     }
 }

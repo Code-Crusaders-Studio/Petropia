@@ -88,7 +88,7 @@ public class InputManager : MonoBehaviour
 
     private IEnumerator CheckHold(GameObject hitObject)
     {
-        yield return new WaitForSeconds(holdTime);
+        yield return new WaitForSecondsRealtime(holdTime);
         isHolding = true;
         OnLongPress(hitObject);
     }

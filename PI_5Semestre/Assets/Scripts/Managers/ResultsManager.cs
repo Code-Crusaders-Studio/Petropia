@@ -7,5 +7,4 @@ public class ResultsManager : MonoBehaviour
     {
         SceneLoader.instance.LoadScene("MainMenu", 1);
     }
-    
 }

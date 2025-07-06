@@ -26,23 +26,24 @@ public class GameUI : MonoBehaviour
     [Header("Time Display")]
     public TMP_Text timeTxt;
 
-    //
-
+    [Header("Goal Display")]
     public Image goalBar;
     public GameObject[] goal;
     bool[] fails = { false, false, false };
-
     public GameObject[] check;
-
     public Sprite[] goalResult;
+
+    [Header("Options Panel Components")]
+    public GameObject optionsPanel;
+    public TextMeshProUGUI contrastText;
 
     void Start()
     {
         for (int i = 0; i < check.Length; i++)
         {
-           check[i].SetActive(false);     
+            check[i].SetActive(false);
         }
-       
+
     }
 
     void Update()
@@ -94,7 +95,7 @@ public class GameUI : MonoBehaviour
                 fails[1] = true;
             }
 
-               check[1].SetActive(true);
+            check[1].SetActive(true);
 
 
             if (fails[1])
@@ -119,7 +120,7 @@ public class GameUI : MonoBehaviour
                 fails[2] = true;
             }
 
-                     check[2].SetActive(true);
+            check[2].SetActive(true);
 
 
             if (fails[2])
@@ -241,5 +242,40 @@ public class GameUI : MonoBehaviour
     public void StorageWarning()
     {
 
+    }
+
+    public void Contrast()
+    {
+        if (GameSettings.highContrast)
+        {
+            GameSettings.highContrast = false;
+                 contrastText.text = "Desativado";
+        }
+        else if (!GameSettings.highContrast)
+        {
+            GameSettings.highContrast = true;
+                 contrastText.text = "Ativado";
+        }
+    }
+
+    public void Options()
+    {
+        optionsPanel.SetActive(true);
+      
+          if (GameSettings.highContrast)
+        {
+            contrastText.text = "Ativado";
+        }
+        else if (!GameSettings.highContrast)
+        {
+
+            contrastText.text = "Desativado";
+        }
+    }
+
+    public void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
+        SaveLoadSettings.SaveSettings();
     }
 }

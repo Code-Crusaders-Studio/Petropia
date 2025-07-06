@@ -23,12 +23,6 @@ public class ResourceManager : MonoBehaviour
 
     void Awake() => instance = this;
 
-    ///
-
-    public Image gallonGoalBar;
-
-    ///
-
     public void Cash(int amount)
     {
         cashAmount = Mathf.Clamp(cashAmount + amount, 0, 999999999);
@@ -64,9 +58,7 @@ public class ResourceManager : MonoBehaviour
         else if (amount < 0)
         {
             totalGallonsSold += -amount;
-            gallonGoalBar.fillAmount = totalGallonsSold / 2000f;
         }
-         
 
         OnGallonsChanged?.Invoke(gallonAmount);
     }
@@ -88,5 +80,19 @@ public class ResourceManager : MonoBehaviour
     {
         storageCapacity = Mathf.Clamp(storageCapacity + amount, 0, 1000000);
         OnStorageChanged?.Invoke(storageCapacity);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+            Cash(100000);
+        if (Input.GetKeyDown(KeyCode.O))
+            Oil(1000);
+        if (Input.GetKeyDown(KeyCode.G))
+            Gallons(1000);
+        if (Input.GetKeyDown(KeyCode.S))
+            Gallons(-100);
+        if (Input.GetKeyDown(KeyCode.P))
+            Pollution(100);
     }
 }

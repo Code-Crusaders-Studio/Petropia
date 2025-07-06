@@ -40,7 +40,7 @@ public class ShopManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private IEnumerator CheckHold()
     {
-        yield return new WaitForSeconds(holdDuration);
+        yield return new WaitForSecondsRealtime(holdDuration);
         wasHeld = true;
         OnLongPress();
     }

@@ -22,7 +22,7 @@ public class StatisticsUI : MonoBehaviour
             }
         }
 
-        scoreTxt.text += PlayerData.score.ToString("F1");
-        ratingTxt.text += PlayerData.rating;
+        scoreTxt.text = "Pontuação: " + PlayerData.score.ToString("F1");
+        ratingTxt.text = "Nota: " + PlayerData.rating;
     }
 }
