@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -42, y: 157}
+  m_AnchoredPosition: {x: -42, y: 136}
   m_SizeDelta: {x: 163.3704, y: 97.3939}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &23255788
@@ -708,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 128}
+  m_AnchoredPosition: {x: 0, y: 201}
   m_SizeDelta: {x: 312, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103461872
@@ -2240,7 +2240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -272.00003}
+  m_AnchoredPosition: {x: 0, y: -199.00009}
   m_SizeDelta: {x: 312, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912731610
@@ -3468,7 +3468,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2137193489}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: CloseOptions
+        m_MethodName: CloseCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3626,7 +3626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -72.00002}
+  m_AnchoredPosition: {x: 0, y: 0.9999237}
   m_SizeDelta: {x: 312, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465902322
@@ -3956,13 +3956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'beatriz nascimento
-
-    icaro pires
-
-    bruno barros
-
-    victor cordeiro'
+  m_text: "beatriz nascimento\n\xEDcaro pires\nbruno barros\nvictor cordeiro"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f13ebf525f0dca4ea6f95cc8ab72049, type: 2}
   m_sharedMaterial: {fileID: -7153965300525743910, guid: 3f13ebf525f0dca4ea6f95cc8ab72049, type: 2}
@@ -5261,7 +5255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -476}
+  m_AnchoredPosition: {x: 0, y: -403.00006}
   m_SizeDelta: {x: 312, y: 186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131779742

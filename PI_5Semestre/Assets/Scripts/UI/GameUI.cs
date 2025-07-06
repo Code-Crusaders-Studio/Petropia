@@ -6,6 +6,7 @@ public class GameUI : MonoBehaviour
 {
     public static GameUI instance;
     ResourceManager resources;
+    GoalManager goals;
 
     [Header("UI Text Display")]
     public TMP_Text cashTxt;
@@ -25,10 +26,118 @@ public class GameUI : MonoBehaviour
     [Header("Time Display")]
     public TMP_Text timeTxt;
 
+    //
+
+    public Image goalBar;
+    public GameObject[] goal;
+    bool[] fails = { false, false, false };
+
+    public GameObject[] check;
+
+    public Sprite[] goalResult;
+
+    void Start()
+    {
+        for (int i = 0; i < check.Length; i++)
+        {
+           check[i].SetActive(false);     
+        }
+       
+    }
+
+    void Update()
+    {
+        goalBar.fillAmount = resources.totalGallonsSold / 2000f;
+
+        if (goals.currentGoal == GoalManager.Goals.First)
+        {
+            goal[0].SetActive(true);
+            goal[1].SetActive(false);
+            goal[2].SetActive(false);
+            goal[3].SetActive(false);
+        }
+
+        if (goals.currentGoal == GoalManager.Goals.Second)
+        {
+
+            goal[0].SetActive(false);
+            goal[1].SetActive(true);
+            goal[2].SetActive(false);
+            goal[3].SetActive(false);
+
+            if (resources.totalGallonsSold < 200)
+            {
+                fails[0] = true;
+            }
+
+            check[0].SetActive(true);
+
+            if (fails[0])
+            {
+                check[0].GetComponent<Image>().sprite = goalResult[0];
+            }
+            else if (!fails[0])
+            {
+                check[0].GetComponent<Image>().sprite = goalResult[1];
+            }
+        }
+
+        if (goals.currentGoal == GoalManager.Goals.Third)
+        {
+            goal[0].SetActive(false);
+            goal[1].SetActive(false);
+            goal[2].SetActive(true);
+            goal[3].SetActive(false);
+
+            if (resources.totalGallonsSold < 500)
+            {
+                fails[1] = true;
+            }
+
+               check[1].SetActive(true);
+
+
+            if (fails[1])
+            {
+                check[1].GetComponent<Image>().sprite = goalResult[0];
+            }
+            else if (!fails[1])
+            {
+                check[1].GetComponent<Image>().sprite = goalResult[1];
+            }
+        }
+
+        if (goals.currentGoal == GoalManager.Goals.Final)
+        {
+            goal[0].SetActive(false);
+            goal[1].SetActive(false);
+            goal[2].SetActive(false);
+            goal[3].SetActive(true);
+
+            if (resources.totalGallonsSold < 1000)
+            {
+                fails[2] = true;
+            }
+
+                     check[2].SetActive(true);
+
+
+            if (fails[2])
+            {
+                check[2].GetComponent<Image>().sprite = goalResult[0];
+            }
+            else if (!fails[2])
+            {
+                check[2].GetComponent<Image>().sprite = goalResult[1];
+            }
+        }
+    }
+
     void Awake()
     {
         instance = this;
         resources = ResourceManager.instance;
+        goals = GoalManager.instance;
     }
 
     void OnEnable()

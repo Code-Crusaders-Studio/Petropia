@@ -17,6 +17,7 @@ public class ShopManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     [SerializeField] private TMP_Text buildingName, buildingDescription;
 
+
     public void OnPointerDown(PointerEventData eventData)
     {
         wasHeld = false;
