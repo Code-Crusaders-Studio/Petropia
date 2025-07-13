@@ -27,7 +27,7 @@ public class SceneLoader : MonoBehaviour
     public IEnumerator Transition(string sceneName, float waitTime)
     {
         // Tocar animação de transição
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSecondsRealtime(waitTime);
         SceneManager.LoadScene(sceneName);
     }
 
