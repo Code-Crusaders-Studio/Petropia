@@ -838,10 +838,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1828304532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -48, y: -43.305}
-  m_SizeDelta: {x: 75.1087, y: 75.10901}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -37, y: 629}
+  m_SizeDelta: {x: 75.1087, y: 75.109}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &123067864
 MonoBehaviour:
@@ -1083,7 +1083,6 @@ GameObject:
   m_Component:
   - component: {fileID: 237304938}
   - component: {fileID: 237304939}
-  - component: {fileID: 237304940}
   m_Layer: 0
   m_Name: Scene Loader
   m_TagString: Untagged
@@ -1118,23 +1117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221a7cd636730ca41816b71ac9305177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
 --- !u!1 &278360575
 GameObject:
-=======
-<<<<<<< Updated upstream
-=======
-  song:
-  - {fileID: 8300000, guid: 3a262e9fcd4d2ec4dabca6c8a2cdf9f2, type: 3}
-  - {fileID: 8300000, guid: 0147788f37654a94c8aa04e9786c782d, type: 3}
---- !u!82 &237304940
-AudioSource:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278360576}
@@ -1265,99 +1253,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
-=======
-  m_GameObject: {fileID: 237304937}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
->>>>>>> Stashed changes
 --- !u!1 &366255800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,10 +1297,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 --- !u!1 &402504856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,9 +1680,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1788479118}
-  - {fileID: 1419277989}
   - {fileID: 1564901766}
   - {fileID: 1085763980}
+  - {fileID: 1419277989}
   - {fileID: 982316440}
   - {fileID: 758133930}
   - {fileID: 1013680064}
@@ -2406,7 +2297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &758133930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2426,7 +2317,6 @@ RectTransform:
   - {fileID: 689496256}
   - {fileID: 691280515}
   - {fileID: 1375257348}
-  - {fileID: 2004836376}
   m_Father: {fileID: 526595463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4365,26 +4255,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 758133930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 325, y: 255.79}
   m_SizeDelta: {x: 75.1087, y: 75.10901}
   m_Pivot: {x: 0.5, y: 0.5}
-=======
-<<<<<<< Updated upstream
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -114.63574, y: 1351.8972}
-  m_SizeDelta: {x: 75.1087, y: 75.109}
-=======
-  m_AnchorMin: {x: 0.91041344, y: 0.6556638}
-  m_AnchorMax: {x: 0.91041344, y: 0.6556638}
-  m_AnchoredPosition: {x: -46, y: -36.961}
-  m_SizeDelta: {x: 75.1087, y: 75.10901}
->>>>>>> Stashed changes
-  m_Pivot: {x: 1, y: 1}
->>>>>>> Stashed changes
 --- !u!114 &1375257349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5490,8 +5365,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6370,41 +6245,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &2004836375
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2004836376}
-  m_Layer: 5
-  m_Name: Credits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2004836376
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004836375}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 758133930}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00012207031}
-  m_SizeDelta: {x: 0, y: -0.00012207031}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2033331704
 GameObject:
   m_ObjectHideFlags: 0
@@ -6808,26 +6648,12 @@ MonoBehaviour:
   startPanel: {fileID: 1085763979}
   optionsPanel: {fileID: 982316439}
   creditsPanel: {fileID: 758133929}
-<<<<<<< Updated upstream
   resultsPanel: {fileID: 1013680063}
   contrastText: {fileID: 1667060167}
   previousScoreText: {fileID: 1009331234}
   previousRatingText: {fileID: 278360578}
   bestScoreText: {fileID: 1444874896}
   bestRatingText: {fileID: 1447039455}
-=======
-<<<<<<< Updated upstream
-  menuPanel: {fileID: 1564901765}
-  contrastText: {fileID: 1667060167}
-=======
-  resultsPanel: {fileID: 0}
-  contrastText: {fileID: 1667060167}
-  previousScoreText: {fileID: 0}
-  previousRatingText: {fileID: 0}
-  bestScoreText: {fileID: 0}
-  bestRatingText: {fileID: 0}
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
