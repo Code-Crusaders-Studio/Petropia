@@ -27,7 +27,17 @@ public class MainMenuManager : MonoBehaviour
         if (GameSettings.firstTime)
         {
             SaveLoadSettings.SwitchFirstTime();
+<<<<<<< Updated upstream
             SceneLoader.instance.LoadScene("Gameplay", 0);
+=======
+<<<<<<< Updated upstream
+            SceneLoader.instance.LoadScene("Gameplay", 1);
+=======
+            menuPanel.SetActive(false);
+            startPanel.SetActive(true);
+            //SceneLoader.instance.LoadScene("Gameplay", 0);
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         }
         else
         {
