@@ -27,7 +27,8 @@ public class MainMenuManager : MonoBehaviour
         if (GameSettings.firstTime)
         {
             SaveLoadSettings.SwitchFirstTime();
-            SceneLoader.instance.LoadScene("Gameplay", 0);
+            menuPanel.SetActive(false);
+            startPanel.SetActive(true);
         }
         else
         {

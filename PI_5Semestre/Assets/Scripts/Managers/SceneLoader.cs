@@ -1,11 +1,25 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader instance;
     Animator anim;
+
+    AudioSource aud;
+    string currentScene;
+
+    public AudioClip[] song;
+
+    AudioClip newClip;
+
+    public Slider soundSlider;
+
+    public GameObject _soundSlider;
+
 
     void Awake()
     {
@@ -22,6 +36,21 @@ public class SceneLoader : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        aud = GetComponent<AudioSource>();
+
+        SceneManager.activeSceneChanged += ChangedActiveScene;
+
+        aud.clip = song[0];
+        aud.Play();
+
+        currentScene = SceneManager.GetActiveScene().name;
+
+    }
+
+    void Update()
+    {
+        aud.volume = GameSettings.audioVolume;
     }
 
     public IEnumerator Transition(string sceneName, float waitTime)
@@ -35,4 +64,45 @@ public class SceneLoader : MonoBehaviour
     {
         StartCoroutine(Transition(sceneName, waitTime));
     }
+
+
+    void ChangedActiveScene(Scene current, Scene next)
+    {
+        currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "MainMenu")
+        {
+           
+        }
+
+        if (currentScene == "Gameplay")
+        {
+    
+        }
+
+        if (currentScene == "Gameplay")
+        {
+            newClip = song[1];
+
+            if (newClip != aud.clip)
+            {
+                aud.clip = newClip;
+                aud.Play();
+
+            }
+
+        }
+        else if (currentScene != "Gameplay")
+        {
+            newClip = song[0];
+            if (newClip != aud.clip)
+            {
+                aud.clip = newClip;
+                aud.Play();
+
+            }
+        }
+
+    }
+
 }

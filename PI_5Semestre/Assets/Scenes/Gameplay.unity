@@ -4123,7 +4123,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594441350}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d17a4280f95201e4896fcf8818c7f8ef, type: 3}
@@ -5625,6 +5625,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221a7cd636730ca41816b71ac9305177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  song: []
+  soundSlider: {fileID: 0}
+  _soundSlider: {fileID: 0}
 --- !u!4 &767404580
 Transform:
   m_ObjectHideFlags: 0
@@ -8145,7 +8148,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1856312646}
+        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
+        m_MethodName: Volume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &1161320530
 GameObject:
   m_ObjectHideFlags: 0
@@ -14193,6 +14208,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ef63a7f341fef2a46b31c5014de4b7c6, type: 3}
   optionsPanel: {fileID: 1034317930}
   contrastText: {fileID: 683863737}
+  _soundSlider: {fileID: 1117921650}
 --- !u!1 &1861978352
 GameObject:
   m_ObjectHideFlags: 0

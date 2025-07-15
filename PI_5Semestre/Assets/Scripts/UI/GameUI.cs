@@ -37,6 +37,8 @@ public class GameUI : MonoBehaviour
     public GameObject optionsPanel;
     public TextMeshProUGUI contrastText;
 
+    public GameObject _soundSlider;
+
     void Start()
     {
         for (int i = 0; i < check.Length; i++)
@@ -132,6 +134,8 @@ public class GameUI : MonoBehaviour
                 check[2].GetComponent<Image>().sprite = goalResult[1];
             }
         }
+
+        _soundSlider.GetComponent<Slider>().value = GameSettings.audioVolume;
     }
 
     void Awake()
@@ -242,6 +246,11 @@ public class GameUI : MonoBehaviour
     public void StorageWarning()
     {
 
+    }
+
+    public void Volume()
+    {
+        GameSettings.audioVolume = _soundSlider.GetComponent<Slider>().value;
     }
 
     public void Contrast()
