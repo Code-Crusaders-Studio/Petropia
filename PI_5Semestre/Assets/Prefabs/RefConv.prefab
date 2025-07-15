@@ -294,7 +294,7 @@ MonoBehaviour:
     cru em 1 gal\xE3o de combust\xEDvel."
   terrain: Ground
   buildCost: 20000
-  generatedPollution: 50
+  generatedPollution: 10
   upgradeCost: 10000
   upgraded: 0
   currentState: 0
@@ -305,5 +305,5 @@ MonoBehaviour:
   degradationRate: 5
   repairCost: 5000
   fullRepairCost: 20000
-  additionalPollution: 50
+  additionalPollution: 20
   refineryType: 0

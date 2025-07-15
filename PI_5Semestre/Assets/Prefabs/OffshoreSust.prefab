@@ -185,12 +185,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: 3
   buildingName: "Sonda Offshore Sustent\xE1vel"
-  buildingDescription: "Leva 10* segundos para produzir 50* unidades de petr\xF3leo.
+  buildingDescription: "Leva 5 segundos para produzir 50 unidades de petr\xF3leo.
     Para que o petr\xF3leo produzido seja armazenado, \xE9 necess\xE1rio ter um Tanque
     de Armazenamento com espa\xE7o dispon\xEDvel no cen\xE1rio."
   terrain: Water
   buildCost: 50000
-  generatedPollution: 25
+  generatedPollution: 5
   upgradeCost: 20000
   upgraded: 0
   currentState: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   degradationRate: 5
   repairCost: 5000
   fullRepairCost: 25000
-  additionalPollution: 75
+  additionalPollution: 10
 --- !u!1 &3621610577178177531
 GameObject:
   m_ObjectHideFlags: 0

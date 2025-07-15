@@ -287,19 +287,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: 0
   buildingName: Sonda Terrestre Convencional
-  buildingDescription: "Leva 10 segundos para produzir 50 unidades de petr\xF3leo.
+  buildingDescription: "Leva 5 segundos para produzir 50 unidades de petr\xF3leo.
     Para que o petr\xF3leo produzido seja armazenado, \xE9 necess\xE1rio ter um Tanque
     de Armazenamento com espa\xE7o dispon\xEDvel no cen\xE1rio."
   terrain: Ground
   buildCost: 20000
-  generatedPollution: 50
+  generatedPollution: 10
   upgradeCost: 10000
   upgraded: 0
   currentState: 0
-  extractionTime: 10
+  extractionTime: 5
   oilOutput: 50
   condition: 100
   degradationRate: 5
   repairCost: 5000
   fullRepairCost: 20000
-  additionalPollution: 50
+  additionalPollution: 20

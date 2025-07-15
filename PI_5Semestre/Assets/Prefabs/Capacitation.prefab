@@ -186,7 +186,7 @@ MonoBehaviour:
   buildingName: "Centro de Capacita\xE7\xE3o"
   buildingDescription: Extratoras e Refinarias produzem 2x mais recursos.
   terrain: Ground
-  buildCost: 1000000
+  buildCost: 100000
   generatedPollution: 0
   upgradeCost: 0
   upgraded: 0

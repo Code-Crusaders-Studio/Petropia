@@ -46,22 +46,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: 1
   buildingName: "Sonda Terrestre Sustent\xE1vel"
-  buildingDescription: "Leva 10 segundos para produzir 25 unidades de petr\xF3leo.
+  buildingDescription: "Leva 5 segundos para produzir 25 unidades de petr\xF3leo.
     Para que o petr\xF3leo produzido seja armazenado, \xE9 necess\xE1rio ter um Tanque
     de Armazenamento com espa\xE7o dispon\xEDvel no cen\xE1rio."
   terrain: Ground
   buildCost: 35000
-  generatedPollution: 25
+  generatedPollution: 5
   upgradeCost: 10000
   upgraded: 0
   currentState: 0
-  extractionTime: 10
+  extractionTime: 5
   oilOutput: 25
   condition: 100
   degradationRate: 5
   repairCost: 5000
   fullRepairCost: 20000
-  additionalPollution: 25
+  additionalPollution: 10
 --- !u!1 &1453075628179725686
 GameObject:
   m_ObjectHideFlags: 0

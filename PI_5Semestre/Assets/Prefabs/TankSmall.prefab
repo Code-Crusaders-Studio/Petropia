@@ -188,4 +188,4 @@ MonoBehaviour:
   upgradeCost: 0
   upgraded: 0
   currentState: 0
-  additionalStorage: 100
+  additionalStorage: 1000

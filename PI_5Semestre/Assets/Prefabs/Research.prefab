@@ -49,7 +49,7 @@ MonoBehaviour:
   buildingDescription: "Estruturas passam a gerar apenas metade da polui\xE7\xE3o
     (regular e adicional)."
   terrain: Ground
-  buildCost: 1000000
+  buildCost: 100000
   generatedPollution: 0
   upgradeCost: 0
   upgraded: 0

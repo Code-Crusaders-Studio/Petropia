@@ -187,21 +187,21 @@ MonoBehaviour:
   buildingName: "Planta de Processamento de Res\xEDduos"
   buildingDescription: "Utiliza a polui\xE7\xE3o geral para gerar combust\xEDvel.
     Diferente das refinarias, consome 25 da polui\xE7\xE3o geral do polo, e leva
-    30 segundos para gerar 1 gal\xE3o de combust\xEDvel."
+    10 segundos para gerar 1 gal\xE3o de combust\xEDvel."
   terrain: Ground
   buildCost: 50000
   generatedPollution: 0
   upgradeCost: 20000
   upgraded: 0
   currentState: 0
-  refiningTime: 30
-  resourceInput: 25
+  refiningTime: 10
+  resourceInput: 5
   gallonOutput: 1
   condition: 100
   degradationRate: 5
   repairCost: 5000
   fullRepairCost: 20000
-  additionalPollution: 25
+  additionalPollution: 10
   refineryType: 1
 --- !u!1 &8920068860985502343
 GameObject:

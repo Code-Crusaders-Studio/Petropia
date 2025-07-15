@@ -47,16 +47,16 @@ MonoBehaviour:
   label: 10
   buildingName: "Porto de Exporta\xE7\xE3o"
   buildingDescription: "Permite a exporta\xE7\xE3o de at\xE9 100 gal\xF5es de combust\xEDvel
-    por vez. Demora 15 segundos para ir e voltar."
+    por vez. Demora 10 segundos para ir e voltar."
   terrain: Water
   buildCost: 50000
-  generatedPollution: 30
+  generatedPollution: 10
   upgradeCost: 0
   upgraded: 0
   currentState: 0
-  shippingTime: 30
-  shippingCost: 500
-  cashPerGallon: 1000
+  shippingTime: 10
+  shippingCost: 0
+  cashPerGallon: 10000
   maxGallonsPerShipment: 100
 --- !u!1 &2670966454516141906
 GameObject:

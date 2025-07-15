@@ -290,20 +290,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: 8
   buildingName: "Refinaria Sustent\xE1vel"
-  buildingDescription: "Leva 20 segundos para transformar 25 unidades de petr\xF3leo
+  buildingDescription: "Leva 10 segundos para transformar 25 unidades de petr\xF3leo
     cru em 1 gal\xE3o de combust\xEDvel."
   terrain: Ground
   buildCost: 25000
-  generatedPollution: 25
+  generatedPollution: 5
   upgradeCost: 10000
   upgraded: 0
   currentState: 0
-  refiningTime: 20
+  refiningTime: 10
   resourceInput: 25
   gallonOutput: 1
   condition: 100
   degradationRate: 5
   repairCost: 5000
   fullRepairCost: 20000
-  additionalPollution: 25
+  additionalPollution: 10
   refineryType: 0
